@@ -549,3 +549,14 @@ var quotes = [
         "Sorry mister, but I'm no Bender. I'm just a simple farmer. Name's Billy West."
 ]
 
+function random_item(items)
+{
+        return items[Math.floor(Math.random()*items.length)];
+     
+}
+
+item = random_item(quotes);
+
+console.log(item);
+document.getElementById('profile').setAttribute('title', item);
+
