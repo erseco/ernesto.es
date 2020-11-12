@@ -39,7 +39,14 @@ function initMap() {
          ['Fes',            34.01812    ,-5.00785,  4],
          ['Merzouga',       31.08017,   -4.01336,   4],
          ['Princeton',      40.35730,   -74.66722,  4],
-         ['Munich',         48.135125,  11.581981,  4]
+         ['Munich',         48.135125,  11.581981,  4],
+         ['Sabinov'			49.102821,  21.097860,  4],
+         ['Berlin'			52.520008,  13.404954,  4],
+         ['L\'isle-sur-la-sorge',		43.918660,  5.054390,   4],
+         ['Paris',			48.856613, 	2.352222, 	4],
+         ['Manchester', 	53.483959, -2.244644, 	4]
+         ['El Hierro'		27.701660,	-17.980230, 4]
+
 
     ];
     map = new google.maps.Map(document.getElementById('map'), {
