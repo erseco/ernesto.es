@@ -1,5 +1,5 @@
 ---
-baseurl: 'https://new.ernesto.es/'
+baseurl: 'https://ernesto.es/'
 languageCode: es-es
 enableMissingTranslationPlaceholders: true
 DefaultContentLanguage: es
@@ -444,9 +444,6 @@ params:
         conference: GECCO Companion 2020, 1520-1527
 
 
-
-
-
   press:
     icon: fa-newspaper
     title: Apariciones en prensa
@@ -474,21 +471,5 @@ params:
         publisher: Universidad de Granada
 
 
-  skills:
-    icon: fa-rocket
-    title: Skills & Proficiency
-    list:
-      - skill: Python & Django
-        level: 98%
-      - skill: Javascript & jQuery
-        level: 98%
-      - skill: Angular
-        level: 95%
-      - skill: HTML5 & CSS
-        level: 95%
-      - skill: Ruby on Rails
-        level: 75%
-      - skill: Sketch & Photoshop
-        level: 60%
   footer:
     copyright: Ernesto Serrano
