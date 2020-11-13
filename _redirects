@@ -1,6 +1,0 @@
-# Redirect users with english language preference from / to /en
-/*  /en/:splat  302  Language=en
-
-# Redirect users with french language preference from / to /fr
-/*  /fr/:splat  302  Language=fr
-
