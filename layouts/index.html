@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <title>{{ .Site.Params.title }}</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <meta name="keywords" content="{{ .Site.Params.keywords }} ">
+
+    <meta name="author" content="{{ .Site.Params.author }}">
+    <link rel="shortcut icon" href="favicon.ico">
+
+
+    <script defer src="{{ .Site.BaseURL }}js/color.js"></script>
+    <script defer src="{{ .Site.BaseURL }}js/bender.js"></script>
+    <script defer src="{{ .Site.BaseURL }}js/map.js"></script>
+
+
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- FontAwesome JS-->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <script defer src="{{ .Site.BaseURL }}vendor/fontawesome/js/all.min.js"></script>
+    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnNx" crossorigin="anonymous"> -->
+
+    <!-- Global CSS -->
+    <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/bootstrap/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+
+
+    <!-- Theme CSS -->
+    {{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed" "enableSourceMap" true ) }}
+    {{ $style := resources.Get "main.scss" | resources.ToCSS $options }}
+    <link id="theme-style" rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    {{ template "_internal/google_analytics_async.html" . }}
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+    {{ template "_internal/schema.html" . }}
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar-wrapper">
+
+            <div class="profile-container">
+                <img id ="profile" class="profile rounded-circle" src="{{ .Site.BaseURL }}images/profile.png" alt="" />
+                <h1 class="name">{{ .Site.Params.profile.name }}</h1>
+                <h3 class="tagline">{{ .Site.Params.profile.tagline }}</h3>
+
+                <div class="translations">
+                    {{ range .Translations }}
+                    <a class="btn btn-translate" href="{{ .Permalink }}">{{upper .Lang }}</a>
+                    {{ end }}
+                </div>
+            </div>
+
+            <div class="contact-container container-block">
+                <ul class="list-unstyled contact-list">
+                {{ range .Site.Params.contact.list }}
+                    <li class="{{ .class }}"><i class="{{ .icon }}"></i><a href="{{ .url }}">{{ .title }}</a></li>
+                {{ end }}
+                </ul>
+            </div><!--//contact-container-->
+
+            <div class="languages-container container-block">
+                <h2 class="container-block-title">Idiomas</h2>
+                <ul class="list-unstyled interests-list">
+                    {{ range .Site.Params.languages.list }}
+                    <li>{{ .language }} <span class="lang-desc">({{ .level }})</span></li>
+                    {{ end }}
+                </ul>
+            </div><!--//interests-->
+
+
+            <div class="interests-container container-block">
+                <h2 class="container-block-title">Intereses</h2>
+                <ul class="list-unstyled interests-list">
+                {{ range .Site.Params.interests.list }}
+                    <li><i class="{{ .icon }}"></i>&nbsp;{{ .interest }}</li>
+                {{ end }}
+                </ul>
+            </div><!--//interests-->
+
+
+            <div class="contact-container container-block">
+                <h2 class="container-block-title">Web anterior</h2>
+                <ul class="list-unstyled contact-list">
+                {{ range .Site.Params.old.list }}
+                    <li class="{{ .class }}"><i class="{{ .icon }}"></i><a href="{{ .url }}">{{ .title }}</a></li>
+                {{ end }}
+                </ul>
+            </div><!--//contact-container-->
+
+
+        </div><!--//sidebar-wrapper-->
+
+        <div class="main-wrapper">
+
+            <section class="section summary-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fa {{ .Site.Params.summary.icon }}"></i></span>Sobre mí</h2>
+                <div class="summary">
+                    <p>{{ with .Site.Params.summary.summary }}{{ . | markdownify }}{{ end }}</p>
+                </div><!--//summary-->
+            </section><!--//section-->
+
+            <section class="section experiences-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fa {{ .Site.Params.experiences.icon }}"></i></span>Experiencia</h2>
+
+                {{ range .Site.Params.jobs.list }}
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title item-title">{{ .position }}</h3>
+                            <div class="time">{{ .dates }}</div>
+                        </div><!--//upper-row-->
+
+                        {{ if .url }}
+                        <div class="company"><a href="{{ .url }}">{{ .company }}</a>, {{ .location }}</div>
+                        {{ else }}
+                        <div class="company">{{ .company }}, {{ .location }}</div>
+                        {{ end }}
+
+
+                    </div><!--//meta-->
+                    <div class="details">
+                        <p>{{ with .details }}{{ . | markdownify }}{{ end }}</p>
+                    </div><!--//details-->
+                </div><!--//item-->
+                {{ end }}
+
+            </section><!--//section-->
+
+
+            <section class="section education-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="{{ .Site.Params.education.icon }}"></i></span>Educación</h2>
+                {{ range .Site.Params.education.list }}
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">{{ .degree }}</h3>
+                            <div class="time">{{ .dates }}</div>
+                        </div><!--//upper-row-->
+                        {{ if .url }}
+                        <div class="company"><a href="{{ .url }}">{{ .college }}</a></div>
+                        {{ else }}
+                        <div class="company">{{ .college }}</div>
+                        {{ end }}
+                    </div><!--//meta-->
+                    <div class="details">
+                        <ul>
+                        {{ range .list }}
+                            {{ if .url }}
+                                <li class="subject">
+                                    <span class="upper-row">
+                                        {{ .grade }}: <a href="{{ .url }}">{{ .subject }}</a>
+                                    </span>
+                                </li>
+                            {{ else }}
+                                <li class="subject">
+                                    <span class="upper-row">
+                                        {{ .grade }}: {{ .subject }}
+                                    </span>
+                                </li>
+                            {{ end }}
+                        {{ end }}
+                        </ul>
+                    </div><!--//details-->
+                </div><!--//item-->
+                {{ end }}
+
+            </section><!--//section-->
+
+
+            <section class="section articles-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fas {{ .Site.Params.articles.icon }}"></i></span>{{ .Site.Params.articles.title }}</h2>
+                {{ range .Site.Params.articles.list }}
+                <div class="item">
+                  <li><a href="{{ .url }}}">{{ .title }}</a></li>
+                    <div class="publication-authors">{{ .authors }}</div>
+                    <span class="publication-conference">{{ .conference }}</span>
+                </div><!--//item-->
+                {{ end }}
+            </section><!--//section-->
+
+            <section class="section prizes-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fas {{ .Site.Params.prizes.icon }}"></i></span>{{ .Site.Params.prizes.title }}</h2>
+                <ul>
+                {{ range .Site.Params.prizes.list }}
+                    <li>
+                    <div class="item">
+                        <span class="">{{ .title }}</span>
+                        |
+                        <span class="company">{{ .publisher }}</span>
+                    </div><!--//item-->
+                    </li>
+                {{ end }}
+                </ul>
+            </section><!--//section-->
+
+            <section class="section press-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fas {{ .Site.Params.press.icon }}"></i></span>{{ .Site.Params.press.title }}</h2>
+                <ul>
+                {{ range .Site.Params.press.list }}
+                    <li>
+                    <div class="item">
+                        <span class=""><a href="{{ .url }}">{{ .title }}</a></span>
+                        |
+                        <span class="company">{{ .publisher }}</span>
+                        |
+                        <span class="company">{{ .date }}</span>
+                    </div><!--//item-->
+                    </li>
+                {{ end }}
+                </ul>
+
+            </section><!--//section-->
+
+            <section class="places-section section d-none d-sm-block">
+                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-map"></i></span>Places</h2>
+                <div class="intro">
+                    <p>Algunos de los países que he visitado.</p>
+                </div><!--//intro-->
+                    <div id="map" style="height:300px; width:100%;"></div>
+
+
+<!--                    <div style="width: 100%; overflow: hidden; height: 480px;">
+                    <iframe
+                        style="border:none; margin-top: -46px;"
+                        src="https://www.google.com/maps/d/u/0/embed?mid=1K25B5y1eHGM3pbdkf9rtm_WOR-j1kDA-&v=quarterly"
+                        width="640"
+                        height="480"
+                        frameborder="0"
+                        style="border:0"
+                    >
+                    </iframe>
+                    </div> -->
+                </div>
+            </section>
+
+        </div><!--//main-body-->
+    </div>
+
+    <footer class="footer">
+        <div class="text-center">
+            <small class="copyright">Designed with&nbsp;<i class="fa fa-heart"></i>&nbsp;and without 5G</small><br>
+            <small class="copyright">{{ now.Year }} &copy; {{ with .Site.Params.footer.copyright }}{{ . | markdownify }}{{end}}</small>
+
+        </div><!--//container-->
+    </footer><!--//footer-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbvdSakXauNKVpUOK1tAFvyRBV9n5_blY&callback=initMap" async defer type="text/javascript"></script>
+</body>
+</html>
+

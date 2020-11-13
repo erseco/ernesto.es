@@ -1,0 +1,494 @@
+---
+baseurl: 'https://new.ernesto.es/'
+languageCode: es-es
+enableMissingTranslationPlaceholders: true
+DefaultContentLanguage: es
+# theme: new-orbit
+# theme: ernestronic
+googleAnalytics: UA-89832-5
+disableRSS: true
+disableSitemap: true
+disable404: false
+enableRobotsTXT: true
+
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
+
+params:
+
+# Meta
+
+  description: Ernesto Serrano Collado, solucionador de problemas informáticos especializado en desarrollo web responsivo, SEO, optimización de servidores, desarrollo de aplicaciones para móviles y administración de sistemas
+  author: Ernesto Serrano Collado
+  keywords: ernesto serrano, ernesto serrano collado,ernesto, serrano, collado, informatico, informaticos, solucionador, problemas, solucionador de problemas, problems solver, mr wolf, resume, IT, consultant, expertise, apache, mysql, linux, php, java, android, iOS, python, ingeniero, ingenieria, engineering, seguridad
+
+  images:
+    - images/profile.png
+
+  title: Ernesto Serrano - Solucionador de Problemas Informáticos
+
+# Theme styles
+
+    # The original template comes with 6 colour schemes. You may choose styles below.
+    # "styles.css", "styles-2.css", "styles-3.css", "styles-4.css", "styles-5.css", "styles-6.css"
+    # are available. Also the source LESS files are included so
+    # it’s quick and easy to change the styling and colour scheme.
+
+  # styles: styles.css
+  styles: orbit-1.css
+
+  profile:
+    name: Ernesto Serrano
+    tagline: Solucionador de Problemas
+    avatar: images/profile.png
+
+  contact:
+    list:
+      - class: email
+        icon: fa fa-envelope
+        url: 'mailto: info@ernesto.es'
+        title: info@ernesto.es
+
+      - class: phone
+        icon: fa fa-phone
+        url: 'https://api.whatsapp.com/send?phone=34654594460&text=Hola, Ernesto!'
+        title: '654 594 460'
+
+      - class: resume
+        icon: fa fa-file-pdf
+        url: https://docs.google.com/document/export?format=pdf&id=1T1AZMUG2nIeckalcBgzcFwXmD_hC3cTjJjuP2LEd3mE
+        title: "curriculum vitae"
+
+      - class: location
+        icon: fa fa-map-marker-alt
+        url: https://maps.google.es/maps?q=El%20Hierro,+Spain
+        title: "El Hierro, Spain"
+
+
+      # - class: linkedin
+      #   icon: fab fa-linkedin
+      #   url: https://linkedin.com/in/erseco
+      #   title: linkedin.com/in/erseco
+
+      - class: github
+        icon: fab fa-github
+        url: https://github.com/erseco
+        title: github.com/erseco
+
+      # - class: twitter
+      #   icon: fab fa-twitter
+      #   url: https://twitter.com/erseco
+      #   title: '@erseco'
+
+  old:
+    list:
+      - class: website
+        icon: fa fa-globe
+        url: https://old.ernesto.es
+        title: old.ernesto.es
+
+
+  education:
+    icon: fa fa-graduation-cap
+    list:
+      - degree: Máster en Formación del Profesorado
+        college: Universidad de Granada
+        url: https://masteres.ugr.es/profesorado/
+        dates: 2018 - 2019
+
+      - degree: Máster en Ingeniería Informática
+        college: Universidad de Granada
+        dates: 2017 - 2018
+        list:
+
+          - subject: Cloud Computing II
+            grade: MATRÍCULA DE HONOR en
+
+      - degree: Grado en Ingeniería Informática
+        college: Universidad de Granada
+        url: https://grados.ugr.es/informatica/
+        dates: 2013 - 2017
+        list:
+
+          - subject: Algorítmica
+            grade: MATRÍCULA DE HONOR en
+          - subject: Desarrollo de Aplicaciones para Internet
+            grade: MATRÍCULA DE HONOR en
+            url: https://github.com/erseco/ugr_desarrollo_aplicaciones_internet
+          - subject: Estadística
+            grade: MATRÍCULA DE HONOR en
+          - subject: Estructura de Computadores
+            grade: MATRÍCULA DE HONOR en
+          - subject: Programación web
+            grade: MATRÍCULA DE HONOR en
+            url: https://github.com/erseco/ugr_programacion_web
+          - subject: Programacion y diseño orientado a objetos
+            grade: MATRÍCULA DE HONOR en
+            url: https://github.com/erseco/napakalaki_ruby
+          - subject: Servidores Web de Altas Prestaciones
+            grade: MATRÍCULA DE HONOR en
+            url: https://github.com/erseco/ugr_servidores_web_de_altas_prestaciones
+          - subject: Sistemas de Información Basados en Web
+            grade: MATRÍCULA DE HONOR en
+            url: https://github.com/erseco/ugr_sistemas_de_informacion_basados_en_web
+          - subject: Sistemas de Información para Empresas
+            grade: MATRÍCULA DE HONOR en
+          - subject: Sistemas Multimedia
+            grade: MATRÍCULA DE HONOR en
+            url: https://github.com/erseco/ugr_sistemas_multimedia
+          - subject: Tecnologías Web
+            grade: MATRÍCULA DE HONOR en
+
+
+      - degree: Técnico Superior en Administración de Sistemas Informáticos en Red
+        college: IES José Luis Castillo Puche
+        dates: 2011 - 2013
+
+  languages:
+    title: Languages
+    list:
+      - language: Castellano
+        level: Nativo
+      - language: Inglés
+        level: B2
+
+
+  interests:
+    enable: true
+    title: Interests
+    list:
+      - interest: Tecnología
+        icon: fa fa-microchip
+      - interest: Bricolage
+        icon: fa fa-tools
+      - interest: Senderismo
+        icon: fa fa-hiking
+      - interest: Cocina
+        icon: fa fa-cocktail
+      - interest: Viajes
+        icon: fa fa-plane-departure
+      - interest: Cine
+        icon: fa fa-film
+
+  summary:
+    icon: fa-user
+    title: about_me
+    summary: >-
+      Soy Ernesto Serrano Collado, informático natural de Yecla. Me considero una persona proactiva, dinámica y resolutiva, capaz de solucionar problemas desde la pantalla y detrás de ella, con un destornillador entre los dientes.
+
+
+  experiences:
+    icon: fa-briefcase
+    title: Experiences
+
+  jobs:
+    list:
+
+      - position: Asesor Educación Secundaria y Bachillerato
+        dates: Septiembre 2020 - Actualidad
+        company: CEP El Hierro
+        location: El Hierro
+        url: https://www.gobiernodecanarias.org/educacion/web/centros/centros-profesorado/donde-estamos/centro-del-profesorado-de-el-hierro/
+        details: >-
+          - Asesoría TIC
+
+          - Programa Brújula 20
+
+          - Programa STEAM
+
+          - Eje de Cooperación para el Desarrollo y la Solidaridad
+
+          - Eje de Educación Ambiental y Sostenibilidad
+
+          - Eje de familia y participación educativa
+
+          - Planes de formación en centros
+
+          - Asesoramiento en Metodología y Evaluación
+
+          - Organización de Congresos y Jornadas
+
+
+      - position: Profesor Educación Secundaria
+        dates: Octubre 2019 - Junio 2020
+        company: IES Garoé
+        location: El Hierro
+        url: https://iesgaroe.org
+        details: >-
+          - Coordinación TIC
+
+          - Tecnologías de la Información y la Comunicación - 4º ESO
+
+          - Tecnologías de la Información y la Comunicación I - 1º Bachillerato
+
+          - Tecnologías de la Información y la Comunicación II - 2º Bachillerato
+
+          - Aplicaciones informáticas para el comercio - 1º CFGM Actividades Comerciales
+
+      - position: DevOps Engineer
+        dates: Diciembre 2017 - Diciembre 2019
+        company: ExO Works Europe
+        location: Granada
+        url: https://openexo.com
+        details: >-
+          - Despliegue de microservicios con Ansible, Docker, Swarm, Træfik
+
+          - Optimización de Dockerfiles
+
+          - Mantenimiento de servidores en AWS, Azure y DigitalOcean
+
+          - Optimización de bases de datos PostgreSQL, MariaDB, MySQL
+
+          - Optimización de aplicaciones web Django+Angular
+
+          - Mantenimiento de servidores de correo Postfix, Sendmail
+
+          - Monitorización de sistemas con Datadog, ELK, PandoraFMS
+
+          - Desarrollo de soluciones serverless con Zappa y AWS Lambda
+
+          - Gestion avanzada de repositorios git en GitHub y BitBucket
+
+          - Optimizacion de pipelines Travis-CI, Gitlab-CI y BB Pipelines
+
+          - Securización de entornos, cuentas y servidores
+
+          - Administracion avanzada de G Suite
+
+          - Idioma de trabajo: Inglés 100%
+
+      - position: DevOps Engineer
+        dates: Julio 2017 - Diciembre 2017
+        company: Wazuh, Inc.
+        location: Granada
+        url: https://wazuh.com
+        details: >-
+          - Despliegue y testeo de aplicaciones con Ansible, Docker, Jenkins
+
+          - Generación de paquetes .deb .rpm .msi .pkg
+
+          - Mantenimiento de servidores cloud en AWS
+
+          - Gestion avanzada de repositorios Git
+
+          - Compilación y adaptación de software para AIX, HP-UX, Solaris...
+
+          - Idioma de trabajo: Inglés 100%
+
+      - position: Web Developer
+        dates: Julio 2015 - Noviembre 2016
+        company: Grupo Trevenque (Granada)
+        location: Granada
+        url: https://www.trevenque.es
+        details: >-
+          - Desarrollo de plugins para PrestaShop y WordPress.
+
+          - Desarrollo de páginas web con diseño responsive
+
+          - Instalación y configuración de tiendas online con PrestaShop
+
+          - Instalación y configuración de CMS con Wordpress
+
+          - Optimización de bases de datos MySQL
+
+          - Mantenimiento de servidores (Plesk sobre VMware esxi)
+
+      - position: Programador Web
+        dates: Julio 2009 - Febrero 2015
+        company: Liceo Gráfico
+        location: Granada
+        url: https://liceografico.com
+        details: >-
+          - Desarrollo tienda online con PrestaShop.
+
+          - Mantenimiento tienda online con Magento.
+
+          - Consultor experto en GNU/Linux y Software Libre.
+
+          - Virtualización de equipos de producción sobre VMware esxi.
+
+          - Implantación de redes LAN, Wireless y VPN.
+
+          - Administración y reparación de equipos informáticos.
+
+          - Conexión tienda online con sistema ERP en FileMaker.
+
+          - Administracion avanzada de G Suite.
+
+      - position: Programador Web
+        dates: Julio 2008 - Abril 2009
+        company: Abartia Team (Grupo Orbere)
+        location: Bilbao
+        url: https://web.archive.org/web/20180830202414/http://www.abartiateam.com/
+        details: >-
+          - Consultor experto en GNU/Linux y Software Libre.
+
+          - Diseño e implementación de redes sociales verticales con Elgg.
+
+          - Administración y reparación de equipos informáticos.
+
+          - Diseño e implementación de soluciones ERP y CRM.
+
+      - position: Programador
+        dates: Enero 2004 - Noviembre 2007
+        company: VirtualySoft Yecla
+        location: Yecla (Murcia)
+        url: https://virtualysoft.com/
+        details: >-
+          - Desarrollo de aplicación de gestión ERP VirtualyGEST .NET.
+
+          - Administración de servidores SQL Server.
+
+          - Desarrollo de páginas web dinámicas en PHP + MySQL.
+
+          - Administración y reparación de equipos informáticos.
+
+      - position: Técnico informático
+        dates: Agosto 2003 - Diciembre 2003
+        company: Attempt Informática
+        location: Yecla (Murcia)
+        url: https://web.archive.org/web/20060815121354/http://www.attempt.net/?q=0.2
+        details: >-
+          - Administración de servidores Unix y Debian GNU/Linux.
+
+          - Administración y reparación de equipos informáticos.
+
+          - Instalación y mantenimiento de material informático (Redes, impresoras, etc...)
+
+      - position: Programador Web
+        dates: Julio 2002 - Julio 2003
+        company: Diseño Gráfico Punto de Mira
+        location: Monóvar (Alicante)
+        url: https://web.archive.org/web/20010201152400/http://puntodemira.es/
+        details: >-
+          - Desarrollo de páginas web dinámicas en PHP +  MySQL.
+
+          - Administración y reparación de equipos informáticos (PC - Mac).
+
+          - Asesoramiento en seguridad informática y nuevas tecnologías.
+      - position: Profesor de informática
+        dates: Agosto 2001- Junio 2002
+        company: Centro de estudios Omega
+        location: Villena (Alicante)
+        details: >-
+          - Sistema operativo Windows (todas las versiones).
+
+          - Sistema operativo GNU/Linux.
+
+          - Ofimática (Word, Excel, Access, etc...).
+
+          - Programación en Visual Basic.
+
+  articles:
+    icon: fa-file-alt
+    title: Artículos
+    list:
+
+      - title: Improving evolution of service configurations for moving target defense,
+        authors: Ernesto Serrano Collado, Mario García Valdez, Juan Julián Merelo Guervós,
+        booktitle: IEEE Congress on Evolutionary Computation, CEC 2020, Glasgow, United Kingdom, July 19-24, 2020,
+        pages: 1--8,
+        publisher: IEEE,
+        year : 2020,
+        url  : https://doi.org/10.1109/CEC48606.2020.9185786
+        doi  : 10.1109/CEC48606.2020.9185786,
+        timestamp: Fri, 11 Sep 2020 15:04:22 +0200,
+        biburl: https://dblp.org/rec/conf/cec/ColladoVG20.bib,
+        bibsource: dblp computer science bibliography, https://dblp.org
+        conference: CEC 2020, 1-8
+
+      - title: Using Evolutionary Algorithms for Server Hardening via the Moving Target Defense Technique,
+        authors: Ernesto Serrano Collado, Pedro A. Castillo, Juan Julián Merelo Guervós,
+        editor: Pedro A. Castillo, Juan Luis Jiménez Laredo, Francisco Fernández de Vega,
+        booktitle: Applications of Evolutionary Computation - 23rd European Conference, EvoApplications 2020, Held as Part of EvoStar 2020, Seville, Spain, April 15-17, 2020, Proceedings,
+        series: Lecture Notes in Computer Science,
+        volume: 12104,
+        pages: 670--685,
+        publisher: Springer,
+        year : 2020,
+        url  : https://doi.org/10.1145/3377929.3390034
+        doi  : 10.1007/978-3-030-43722-0\_43,
+        timestamp: Thu, 09 Apr 2020 15:00:58 +0200,
+        biburl: https://dblp.org/rec/conf/evoW/ColladoCG20.bib,
+        bibsource: dblp computer science bibliography, https://dblp.org
+        conference: EvoApplications 2020, 670-685
+
+
+      - title: Moving target defense through evolutionary algorithms,
+        authors: Ernesto Serrano Collado, Mario García Valdez, Juan Julián Merelo Guervós,
+        editor: Carlos Artemio Coello Coello,
+        booktitle: GECCO'20 - Genetic and Evolutionary Computation Conference, Companion Volume, Cancún, Mexico, July 8-12, 2020,
+        pages: 285--286,
+        publisher: ACM,
+        year : 2020,
+        url  : https://doi.org/10.1145/3377929.3390034
+        doi  : 10.1145/3377929.3390034,
+        timestamp: Mon, 20 Jul 2020 07:42:25 +0200,
+        biburl: https://dblp.org/rec/conf/gecco/ColladoVG20.bib,
+        bibsource: dblp computer science bibliography, https://dblp.org
+        conference: GECCO Companion 2020, 285-286
+
+      - title: Delivering diverse web server configuration in a moving target defense using evolutionary algorithms,
+        authors: Ernesto Serrano Collado, Mario García Valdez, Juan Julián Merelo Guervós,
+        editor: Carlos Artemio Coello Coello,
+        booktitle: GECCO'20 - Genetic and Evolutionary Computation Conference, Companion Volume, Cancún, Mexico, July 8-12, 2020,
+        pages: 1520--1527,
+        publisher: ACM,
+        year : 2020,
+        url  : https://doi.org/10.1145/3377929.3398083
+        doi  : 10.1145/3377929.3398083,
+        timestamp: Mon, 20 Jul 2020 07:42:25 +0200,
+        biburl: https://dblp.org/rec/conf/gecco/ColladoVG20a.bib,
+        bibsource: dblp computer science bibliography, https://dblp.org
+        conference: GECCO Companion 2020, 1520-1527
+
+
+
+
+
+  press:
+    icon: fa-newspaper
+    title: Apariciones en prensa
+    list:
+      - title: Profesores Garoé ganan el escape room de la villa
+        url: https://web.archive.org/web/20200523072013/http%3A%2F%2Fwww.diarioelhierro.es%2Ft26496%2Fab02.asp%3Fidweb%3D26496%26idrg%3D165391
+        date: Enero 2020
+        publisher: Diario El Hierro
+
+      - title: DevOps en una Organización Exponencial
+        url: https://web.archive.org/web/20200523071905/https%3A%2F%2Flinkacv.com%2Fpodcast%2Fdevops%2F
+        date: Marzo 2019
+        publisher: Link-a-CV
+
+      - title: Nueva tienda del Museo Thyssen
+        url: https://web.archive.org/web/20200523071740/https%3A%2F%2Fblog.carmenthyssenmalaga.org%2F%3Fp%3D1381
+        date: Septiembre 2016
+        publisher: Museo Thyssen Málaga
+
+  prizes:
+    icon: fa-award
+    title: Premios
+    list:
+      - title: Premio UGR al mejor expediente académico 2015/2016
+        publisher: Universidad de Granada
+
+
+  skills:
+    icon: fa-rocket
+    title: Skills & Proficiency
+    list:
+      - skill: Python & Django
+        level: 98%
+      - skill: Javascript & jQuery
+        level: 98%
+      - skill: Angular
+        level: 95%
+      - skill: HTML5 & CSS
+        level: 95%
+      - skill: Ruby on Rails
+        level: 75%
+      - skill: Sketch & Photoshop
+        level: 60%
+  footer:
+    copyright: Ernesto Serrano
