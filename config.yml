@@ -58,7 +58,7 @@ params:
       - class: resume
         icon: fa fa-file-pdf
         url: https://docs.google.com/document/export?format=pdf&id=1T1AZMUG2nIeckalcBgzcFwXmD_hC3cTjJjuP2LEd3mE
-        title: "curriculum vitae"
+        title: "currículum vitae"
 
       - class: location
         icon: fa fa-map-marker-alt
@@ -123,7 +123,7 @@ params:
           - subject: Programación web
             grade: MATRÍCULA DE HONOR en
             url: https://github.com/erseco/ugr_programacion_web
-          - subject: Programacion y diseño orientado a objetos
+          - subject: Programación y diseño orientado a objetos
             grade: MATRÍCULA DE HONOR en
             url: https://github.com/erseco/napakalaki_ruby
           - subject: Servidores Web de Altas Prestaciones
@@ -160,7 +160,7 @@ params:
     list:
       - interest: Tecnología
         icon: fa fa-microchip
-      - interest: Bricolage
+      - interest: Bricolaje
         icon: fa fa-tools
       - interest: Senderismo
         icon: fa fa-hiking
@@ -201,9 +201,9 @@ params:
 
           - Eje de Educación Ambiental y Sostenibilidad
 
-          - Eje de familia y participación educativa
+          - Eje de Familia y Participación Educativa
 
-          - Planes de formación en centros
+          - Planes de Formación en Centros
 
           - Asesoramiento en Metodología y Evaluación
 
@@ -248,13 +248,13 @@ params:
 
           - Desarrollo de soluciones serverless con Zappa y AWS Lambda
 
-          - Gestion avanzada de repositorios git en GitHub y BitBucket
+          - Gestión avanzada de repositorios git en GitHub y BitBucket
 
-          - Optimizacion de pipelines Travis-CI, Gitlab-CI y BB Pipelines
+          - Optimización de pipelines Travis-CI, Gitlab-CI y BB Pipelines
 
           - Securización de entornos, cuentas y servidores
 
-          - Administracion avanzada de G Suite
+          - Administración avanzada de G Suite
 
           - Idioma de trabajo: Inglés 100%
 
@@ -270,7 +270,7 @@ params:
 
           - Mantenimiento de servidores cloud en AWS
 
-          - Gestion avanzada de repositorios Git
+          - Gestión avanzada de repositorios Git
 
           - Compilación y adaptación de software para AIX, HP-UX, Solaris...
 
@@ -282,7 +282,7 @@ params:
         location: Granada
         url: https://www.trevenque.es
         details: >-
-          - Desarrollo de plugins para PrestaShop y WordPress.
+          - Desarrollo de plugins para PrestaShop y WordPress
 
           - Desarrollo de páginas web con diseño responsive
 
@@ -300,21 +300,21 @@ params:
         location: Granada
         url: https://liceografico.com
         details: >-
-          - Desarrollo tienda online con PrestaShop.
+          - Desarrollo tienda online con PrestaShop
 
-          - Mantenimiento tienda online con Magento.
+          - Mantenimiento tienda online con Magento
 
-          - Consultor experto en GNU/Linux y Software Libre.
+          - Consultor experto en GNU/Linux y Software Libre
 
-          - Virtualización de equipos de producción sobre VMware esxi.
+          - Virtualización de equipos de producción sobre VMware esxi
 
-          - Implantación de redes LAN, Wireless y VPN.
+          - Implantación de redes LAN, Wireless y VPN
 
-          - Administración y reparación de equipos informáticos.
+          - Administración y reparación de equipos informáticos
 
-          - Conexión tienda online con sistema ERP en FileMaker.
+          - Conexión tienda online con sistema ERP en FileMaker
 
-          - Administracion avanzada de G Suite.
+          - Administración avanzada de G Suite
 
       - position: Programador Web
         dates: Julio 2008 - Abril 2009
@@ -322,13 +322,13 @@ params:
         location: Bilbao
         url: https://web.archive.org/web/20180830202414/http://www.abartiateam.com/
         details: >-
-          - Consultor experto en GNU/Linux y Software Libre.
+          - Consultor experto en GNU/Linux y Software Libre
 
-          - Diseño e implementación de redes sociales verticales con Elgg.
+          - Diseño e implementación de redes sociales verticales con Elgg
 
-          - Administración y reparación de equipos informáticos.
+          - Administración y reparación de equipos informáticos
 
-          - Diseño e implementación de soluciones ERP y CRM.
+          - Diseño e implementación de soluciones ERP y CRM
 
       - position: Programador
         dates: Enero 2004 - Noviembre 2007
@@ -336,13 +336,13 @@ params:
         location: Yecla (Murcia)
         url: https://virtualysoft.com/
         details: >-
-          - Desarrollo de aplicación de gestión ERP VirtualyGEST .NET.
+          - Desarrollo de aplicación de gestión ERP VirtualyGEST .NET
 
-          - Administración de servidores SQL Server.
+          - Administración de servidores SQL Server
 
-          - Desarrollo de páginas web dinámicas en PHP + MySQL.
+          - Desarrollo de páginas web dinámicas en PHP + MySQL
 
-          - Administración y reparación de equipos informáticos.
+          - Administración y reparación de equipos informáticos
 
       - position: Técnico informático
         dates: Agosto 2003 - Diciembre 2003
@@ -350,9 +350,9 @@ params:
         location: Yecla (Murcia)
         url: https://web.archive.org/web/20060815121354/http://www.attempt.net/?q=0.2
         details: >-
-          - Administración de servidores Unix y Debian GNU/Linux.
+          - Administración de servidores Unix y Debian GNU/Linux
 
-          - Administración y reparación de equipos informáticos.
+          - Administración y reparación de equipos informáticos
 
           - Instalación y mantenimiento de material informático (Redes, impresoras, etc...)
 
@@ -362,23 +362,23 @@ params:
         location: Monóvar (Alicante)
         url: https://web.archive.org/web/20010201152400/http://puntodemira.es/
         details: >-
-          - Desarrollo de páginas web dinámicas en PHP +  MySQL.
+          - Desarrollo de páginas web dinámicas en PHP +  MySQL
 
-          - Administración y reparación de equipos informáticos (PC - Mac).
+          - Administración y reparación de equipos informáticos (PC - Mac)
 
-          - Asesoramiento en seguridad informática y nuevas tecnologías.
+          - Asesoramiento en seguridad informática y nuevas tecnologías
       - position: Profesor de informática
         dates: Agosto 2001- Junio 2002
         company: Centro de estudios Omega
         location: Villena (Alicante)
         details: >-
-          - Sistema operativo Windows (todas las versiones).
+          - Sistema operativo Windows (todas las versiones)
 
-          - Sistema operativo GNU/Linux.
+          - Sistema operativo GNU/Linux
 
-          - Ofimática (Word, Excel, Access, etc...).
+          - Ofimática (Word, Excel, Access, etc...)
 
-          - Programación en Visual Basic.
+          - Programación en Visual Basic
 
   articles:
     icon: fa-file-alt
