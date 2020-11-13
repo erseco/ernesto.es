@@ -97,8 +97,9 @@ params:
         url: https://masteres.ugr.es/profesorado/
         dates: 2018 - 2019
 
-      - degree: Máster en Ingeniería Informática
+      - degree: Máster Profesional en Ingeniería Informática
         college: Universidad de Granada
+        url: https://masteres.ugr.es/ing-informatica/
         dates: 2017 - 2018
         list:
 
