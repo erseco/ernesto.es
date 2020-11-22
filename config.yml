@@ -19,9 +19,9 @@ params:
 
 # Meta
 
-  description: Ernesto Serrano Collado, solucionador de problemas informáticos especializado en desarrollo web responsivo, SEO, optimización de servidores, desarrollo de aplicaciones para móviles y administración de sistemas
+  description: Ernesto Serrano Collado, solucionador de problemas informáticos especializado en DevOps, SRE, ciberseguridad, alta disponibilidad, arquitecturas cloud basadas en contenedores, optimización de servidores
   author: Ernesto Serrano Collado
-  keywords: ernesto serrano, ernesto serrano collado,ernesto, serrano, collado, informatico, informaticos, solucionador, problemas, solucionador de problemas, problems solver, mr wolf, resume, IT, consultant, expertise, apache, mysql, linux, php, java, android, iOS, python, ingeniero, ingenieria, engineering, seguridad
+  keywords: ernesto serrano, ernesto serrano collado,ernesto, serrano, collado, informatico, informaticos, solucionador, problemas, solucionador de problemas, problems solver, mr wolf, resume, IT, consultant, expertise, docker, security, container, devops, sre, apache, mysql, linux, php, java, android, iOS, python, ingeniero, ingenieria, engineering, seguridad
 
   images:
     - images/profile.png
