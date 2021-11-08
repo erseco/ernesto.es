@@ -92,6 +92,16 @@ params:
   education:
     icon: fa fa-graduation-cap
     list:
+      - degree: Máster en Ciberseguridad y Privacidad
+        college: UOC
+        url: https://estudios.uoc.edu/es/masters-universitarios/ciberseguridad-privacidad/presentacion
+        dates: 2021 - Actualidad
+        
+      - degree: Máster en Currículum y Formación
+        college: Universidad de Granada
+        url: https://masteres.ugr.es/curriculumyformacion/
+        dates: 2021 - Actualidad      
+        
       - degree: Máster en Formación del Profesorado
         college: Universidad de Granada
         url: https://masteres.ugr.es/profesorado/
