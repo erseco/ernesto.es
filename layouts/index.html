@@ -151,14 +151,14 @@
                 <div class="item">
                     <div class="meta">
                         <div class="upper-row">
+                            {{ if .url }}
+                            <h3 class="job-title"><a href="{{ .url }}">{{ .degree }}</a></h3>
+                            {{ else }}
                             <h3 class="job-title">{{ .degree }}</h3>
+                            {{ end }}
                             <div class="time">{{ .dates }}</div>
                         </div><!--//upper-row-->
-                        {{ if .url }}
-                        <div class="company"><a href="{{ .url }}">{{ .college }}</a></div>
-                        {{ else }}
                         <div class="company">{{ .college }}</div>
-                        {{ end }}
                     </div><!--//meta-->
                     <div class="details">
                         <ul>

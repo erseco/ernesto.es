@@ -1,2 +1,6 @@
 public
 resources
+## ignore .DS_Store file.
+*.DS_Store
+
+.hugo_build.lock

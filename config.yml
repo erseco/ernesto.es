@@ -93,22 +93,22 @@ params:
     icon: fa fa-graduation-cap
     list:
       - degree: Máster en Ciberseguridad y Privacidad
-        college: UOC
+        college: Universitat Oberta de Catalunya (UOC)
         url: https://estudios.uoc.edu/es/masters-universitarios/ciberseguridad-privacidad/presentacion
         dates: 2021 - Actualidad
         
-      - degree: Máster en Currículum y Formación
-        college: Universidad de Granada
+      - degree: Máster en Investigación e Innovación en Currículum y Formación
+        college: Universidad de Granada (UGR)
         url: https://masteres.ugr.es/curriculumyformacion/
         dates: 2021 - Actualidad      
         
       - degree: Máster en Formación del Profesorado
-        college: Universidad de Granada
+        college: Universidad de Granada (UGR)
         url: https://masteres.ugr.es/profesorado/
         dates: 2018 - 2019
 
-      - degree: Máster Profesional en Ingeniería Informática
-        college: Universidad de Granada
+      - degree: Máster en Ingeniería Informática
+        college: Universidad de Granada (UGR)
         url: https://masteres.ugr.es/ing-informatica/
         dates: 2017 - 2018
         list:
@@ -117,7 +117,7 @@ params:
             grade: MATRÍCULA DE HONOR en
 
       - degree: Grado en Ingeniería Informática
-        college: Universidad de Granada
+        college: Universidad de Granada (UGR)
         url: https://grados.ugr.es/informatica/
         dates: 2013 - 2017
         list:
@@ -152,8 +152,9 @@ params:
             grade: MATRÍCULA DE HONOR en
 
 
-      - degree: Técnico Superior en Administración de Sistemas Informáticos en Red
+      - degree: CGFS en Administración de Sistemas Informáticos en Red
         college: IES José Luis Castillo Puche
+        url: https://www.todofp.es/que-como-y-donde-estudiar/que-estudiar/loe/informatica-comunicaciones/admin-sist-informaticos-red.html
         dates: 2011 - 2013
 
   languages:
