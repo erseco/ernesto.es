@@ -92,6 +92,16 @@ params:
   education:
     icon: fa fa-graduation-cap
     list:
+      - degree: Máster en Ciberseguridad y Privacidad
+        college: UOC
+        url: https://estudios.uoc.edu/es/masters-universitarios/ciberseguridad-privacidad/presentacion
+        dates: 2021 - Actualidad
+        
+      - degree: Máster en Currículum y Formación
+        college: Universidad de Granada
+        url: https://masteres.ugr.es/curriculumyformacion/
+        dates: 2021 - Actualidad      
+        
       - degree: Máster en Formación del Profesorado
         college: Universidad de Granada
         url: https://masteres.ugr.es/profesorado/
@@ -152,7 +162,7 @@ params:
       - language: Castellano
         level: Nativo
       - language: Inglés
-        level: B2
+        level: C
 
 
   interests:
@@ -176,8 +186,7 @@ params:
     icon: fa-user
     title: about_me
     summary: >-
-      Soy Ernesto Serrano Collado, informático natural de Yecla. Me considero una persona proactiva, dinámica y resolutiva, capaz de solucionar problemas desde la pantalla y detrás de ella, con un destornillador entre los dientes.
-
+      Soy un ingeniero informático nacido en Yecla con una gran pasión por la automatización de tareas y la optimización de procesos. Me gusta viajar, el senderismo y las películas de zombies.
 
   experiences:
     icon: fa-briefcase

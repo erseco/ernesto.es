@@ -189,7 +189,7 @@
                 <h2 class="section-title"><span class="icon-holder"><i class="fas {{ .Site.Params.articles.icon }}"></i></span>{{ .Site.Params.articles.title }}</h2>
                 {{ range .Site.Params.articles.list }}
                 <div class="item">
-                  <li><a href="{{ .url }}}">{{ .title }}</a></li>
+                  <li><a href="{{ .url }}">{{ .title }}</a></li>
                     <div class="publication-authors">{{ .authors }}</div>
                     <span class="publication-conference">{{ .conference }}</span>
                 </div><!--//item-->
@@ -256,7 +256,7 @@
 
     <footer class="footer">
         <div class="text-center">
-            <small class="copyright">Designed with&nbsp;<i class="fa fa-heart"></i>&nbsp;and without 5G</small><br>
+            <small class="copyright">Designed with&nbsp;<i class="fa fa-heart"></i>&nbsp;from a remote island</small><br>
             <small class="copyright">{{ now.Year }} &copy; {{ with .Site.Params.footer.copyright }}{{ . | markdownify }}{{end}}</small>
 
         </div><!--//container-->
