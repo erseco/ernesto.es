@@ -95,12 +95,12 @@ params:
       - degree: Máster en Ciberseguridad y Privacidad
         college: Universitat Oberta de Catalunya (UOC)
         url: https://estudios.uoc.edu/es/masters-universitarios/ciberseguridad-privacidad/presentacion
-        dates: 2021 - Actualidad
+        dates: 2021 - actualidad
         
       - degree: Máster en Investigación e Innovación en Currículum y Formación
         college: Universidad de Granada (UGR)
         url: https://masteres.ugr.es/curriculumyformacion/
-        dates: 2021 - Actualidad      
+        dates: 2021 - actualidad      
         
       - degree: Máster en Formación del Profesorado
         college: Universidad de Granada (UGR)
@@ -197,7 +197,7 @@ params:
     list:
 
       - position: Asesor Educación Secundaria y Bachillerato
-        dates: Septiembre 2020 - Actualidad
+        dates: septiembre 2020 - actualidad
         company: CEP El Hierro
         location: El Hierro
         url: https://www.gobiernodecanarias.org/educacion/web/centros/centros-profesorado/donde-estamos/centro-del-profesorado-de-el-hierro/
@@ -222,7 +222,7 @@ params:
 
 
       - position: Profesor Educación Secundaria
-        dates: Octubre 2019 - Junio 2020
+        dates: octubre 2019 - junio 2020
         company: IES Garoé
         location: El Hierro
         url: https://iesgaroe.org
@@ -238,7 +238,7 @@ params:
           - Aplicaciones informáticas para el comercio - 1º CFGM Actividades Comerciales
 
       - position: DevOps Engineer
-        dates: Diciembre 2017 - Diciembre 2019
+        dates: diciembre 2017 - diciembre 2019
         company: ExO Works Europe
         location: Granada
         url: https://openexo.com
@@ -270,7 +270,7 @@ params:
           - Idioma de trabajo: Inglés 100%
 
       - position: DevOps Engineer
-        dates: Julio 2017 - Diciembre 2017
+        dates: julio 2017 - diciembre 2017
         company: Wazuh, Inc.
         location: Granada
         url: https://wazuh.com
@@ -288,7 +288,7 @@ params:
           - Idioma de trabajo: Inglés 100%
 
       - position: Web Developer
-        dates: Julio 2015 - Noviembre 2016
+        dates: julio 2015 - noviembre 2016
         company: Grupo Trevenque (Granada)
         location: Granada
         url: https://www.trevenque.es
@@ -306,7 +306,7 @@ params:
           - Mantenimiento de servidores (Plesk sobre VMware esxi)
 
       - position: Programador Web
-        dates: Julio 2009 - Febrero 2015
+        dates: julio 2009 - febrero 2015
         company: Liceo Gráfico
         location: Granada
         url: https://liceografico.com
@@ -328,7 +328,7 @@ params:
           - Administración avanzada de G Suite
 
       - position: Programador Web
-        dates: Julio 2008 - Abril 2009
+        dates: julio 2008 - abril 2009
         company: Abartia Team (Grupo Orbere)
         location: Bilbao
         url: https://web.archive.org/web/20180830202414/http://www.abartiateam.com/
@@ -342,7 +342,7 @@ params:
           - Diseño e implementación de soluciones ERP y CRM
 
       - position: Programador
-        dates: Enero 2004 - Noviembre 2007
+        dates: enero 2004 - noviembre 2007
         company: VirtualySoft Yecla
         location: Yecla (Murcia)
         url: https://virtualysoft.com/
@@ -356,7 +356,7 @@ params:
           - Administración y reparación de equipos informáticos
 
       - position: Técnico informático
-        dates: Agosto 2003 - Diciembre 2003
+        dates: agosto 2003 - diciembre 2003
         company: Attempt Informática
         location: Yecla (Murcia)
         url: https://web.archive.org/web/20060815121354/http://www.attempt.net/?q=0.2
@@ -368,7 +368,7 @@ params:
           - Instalación y mantenimiento de material informático (Redes, impresoras, etc...)
 
       - position: Programador Web
-        dates: Julio 2002 - Julio 2003
+        dates: julio 2002 - julio 2003
         company: Diseño Gráfico Punto de Mira
         location: Monóvar (Alicante)
         url: https://web.archive.org/web/20010201152400/http://puntodemira.es/
@@ -379,7 +379,7 @@ params:
 
           - Asesoramiento en seguridad informática y nuevas tecnologías
       - position: Profesor de informática
-        dates: Agosto 2001- Junio 2002
+        dates: agosto 2001- junio 2002
         company: Centro de estudios Omega
         location: Villena (Alicante)
         details: >-
@@ -457,21 +457,26 @@ params:
 
   press:
     icon: fa-newspaper
-    title: Apariciones en prensa
+    title: Apariciones en medios
     list:
+      - title: Congreso Educación Digital en Canarias
+        url: https://web.archive.org/web/20211109103237/https://www3.gobiernodecanarias.org/medusa/ecoescuela/eventos/congreso-educacion-digital/
+        date: noviembre 2021
+        publisher: ATE
+
       - title: Profesores Garoé ganan el escape room de la villa
         url: https://web.archive.org/web/20200523072013/http%3A%2F%2Fwww.diarioelhierro.es%2Ft26496%2Fab02.asp%3Fidweb%3D26496%26idrg%3D165391
-        date: Enero 2020
+        date: enero 2020
         publisher: Diario El Hierro
 
       - title: DevOps en una Organización Exponencial
         url: https://web.archive.org/web/20200523071905/https%3A%2F%2Flinkacv.com%2Fpodcast%2Fdevops%2F
-        date: Marzo 2019
+        date: marzo 2019
         publisher: Link-a-CV
 
       - title: Nueva tienda del Museo Thyssen
         url: https://web.archive.org/web/20200523071740/https%3A%2F%2Fblog.carmenthyssenmalaga.org%2F%3Fp%3D1381
-        date: Septiembre 2016
+        date: septiembre 2016
         publisher: Museo Thyssen Málaga
 
   prizes:
