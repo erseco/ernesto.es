@@ -459,6 +459,12 @@ params:
     icon: fa-newspaper
     title: Apariciones en medios
     list:
+
+      - title: Encuentros en los CEP El Hierro y Gran Canaria Sur
+        url: https://web.archive.org/web/20220602174842/https://www3.gobiernodecanarias.org/medusa/ecoescuela/cprofes/2022/04/22/encuentros-en-los-cep-el-hierro-y-gran-canaria-sur/
+        date: abril 2022
+        publisher: DGOIC
+
       - title: Congreso Educación Digital en Canarias
         url: https://web.archive.org/web/20211109103237/https://www3.gobiernodecanarias.org/medusa/ecoescuela/eventos/congreso-educacion-digital/
         date: noviembre 2021
