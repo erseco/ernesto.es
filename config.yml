@@ -459,6 +459,10 @@ params:
     icon: fa-newspaper
     title: Apariciones en medios
     list:
+      - title: Reunión en el CEP El Hierro
+        url: https://web.archive.org/web/20230324125049/https://www3.gobiernodecanarias.org/medusa/ecoescuela/cprofes/2023/02/24/reunion-en-el-cep-el-hierro/
+        date: febrero 2023
+        publisher: DGOIC
 
       - title: SIMO Educación 2022
         url: https://twitter.com/ecoescuela20/status/1595408982667051011
