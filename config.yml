@@ -455,7 +455,7 @@ params:
         conference: GECCO Companion 2020, 1520-1527
 
   speech:
-    icon: fa-megaphone
+    icon: fa-bullhorn
     title: Charlas
     list:
 
