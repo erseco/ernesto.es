@@ -462,14 +462,14 @@ params:
       - title: Uso educativo de la IA
         url: https://docs.google.com/presentation/export?format=pdf&id=11Y9dnJxFOHIBq5G396_ExFm4LTu4ADwhfYf1LYYHizU
         date: mayo 2023
-        event: II Encuentro de prácticas docentes STEAM en Fuerteventura
+        event: II Encuentro STEAM en Fuerteventura
 
       - title: De Ballena a Gallopedro. Optimizando Dockerfiles
         url: https://docs.google.com/presentation/export?format=pdf&id=1QmzNPbj6NUXw-_RVQzFiti_rzOmY-AhRVI-0KXI-cHA
         date: junio 2019
         event: esLibre 2019
 
-      - title: Sorry, but your common sense is in another castle. Seguridad informática for dummies
+      - title: Sorry, but your common sense is in another castle
         url: https://docs.google.com/presentation/export?format=pdf&id=1TmMi9RxhJqdYHD9Sq-I0S0b1JWQxjGiyKSCwS8vi6gc
         date: abril 2019
         event: JASYP 2019
@@ -479,7 +479,7 @@ params:
     title: Apariciones en medios
     list:
     
-      - title: II Encuentro de prácticas docentes STEAM en Fuerteventura
+      - title: II Encuentro STEAM en Fuerteventura
         url: https://web.archive.org/web/20230417164716/https://www3.gobiernodecanarias.org/medusa/edublog/cprofesgrantarajal/ii-encuentro-de-practicas-docentes-steam-en-fuerteventura/
         date: mayo 2023
         publisher: CEPs Puerto del Rosario y Gran Tarajal
