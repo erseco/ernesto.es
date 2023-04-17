@@ -454,6 +454,25 @@ params:
         bibsource: dblp computer science bibliography, https://dblp.org
         conference: GECCO Companion 2020, 1520-1527
 
+  speech:
+    icon: fa-megaphone
+    title: Charlas
+    list:
+
+      - title: Uso educativo de la IA
+        url: https://docs.google.com/presentation/export?format=pdf&id=11Y9dnJxFOHIBq5G396_ExFm4LTu4ADwhfYf1LYYHizU
+        date: mayo 2023
+        event: II Encuentro de prácticas docentes STEAM en Fuerteventura
+
+      - title: De Ballena a Gallopedro. Optimizando Dockerfiles
+        url: https://docs.google.com/presentation/export?format=pdf&id=1QmzNPbj6NUXw-_RVQzFiti_rzOmY-AhRVI-0KXI-cHA
+        date: junio 2019
+        event: esLibre 2019
+
+      - title: Sorry, but your common sense is in another castle. Seguridad informática for dummies
+        url: https://docs.google.com/presentation/export?format=pdf&id=1TmMi9RxhJqdYHD9Sq-I0S0b1JWQxjGiyKSCwS8vi6gc
+        date: abril 2019
+        event: JASYP 2019
 
   press:
     icon: fa-newspaper
@@ -489,6 +508,16 @@ params:
         url: https://web.archive.org/web/20200523072013/http%3A%2F%2Fwww.diarioelhierro.es%2Ft26496%2Fab02.asp%3Fidweb%3D26496%26idrg%3D165391
         date: enero 2020
         publisher: Diario El Hierro
+
+      - title: Charla en el Contgreso esLibre 2019
+        url: https://web.archive.org/web/20230417171335/https://eslib.re/2019/programa/bd_ml/optimizando_dockerfiles.html
+        date: junio 2019
+        publisher: esLibre
+
+      - title: Charla en las JASYP 2019
+        url: https://web.archive.org/web/20230417171046/https://old.interferencias.tech/2019/04/20/jasyp-2019/
+        date: abril 2019
+        publisher: Interferencias
 
       - title: DevOps en una Organización Exponencial
         url: https://web.archive.org/web/20200523071905/https%3A%2F%2Flinkacv.com%2Fpodcast%2Fdevops%2F

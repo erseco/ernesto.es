@@ -211,6 +211,24 @@
                 </ul>
             </section><!--//section-->
 
+            <section class="section speech-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fas {{ .Site.Params.speech.icon }}"></i></span>{{ .Site.Params.speech.title }}</h2>
+                <ul>
+                {{ range .Site.Params.press.list }}
+                    <li>
+                    <div class="item">
+                        <span class=""><a href="{{ .url }}">{{ .title }}</a></span>
+                        |
+                        <span class="company">{{ .event }}</span>
+                        |
+                        <span class="company">{{ .date }}</span>
+                    </div><!--//item-->
+                    </li>
+                {{ end }}
+                </ul>
+
+            </section><!--//section-->
+
             <section class="section press-section">
                 <h2 class="section-title"><span class="icon-holder"><i class="fas {{ .Site.Params.press.icon }}"></i></span>{{ .Site.Params.press.title }}</h2>
                 <ul>
