@@ -459,6 +459,12 @@ params:
     icon: fa-newspaper
     title: Apariciones en medios
     list:
+    
+      - title: II Encuentro de prácticas docentes STEAM en Fuerteventura
+        url: https://web.archive.org/web/20230417164716/https://www3.gobiernodecanarias.org/medusa/edublog/cprofesgrantarajal/ii-encuentro-de-practicas-docentes-steam-en-fuerteventura/
+        date: febrero 2023
+        publisher: CEPs Puerto del Rosario y Gran Tarajal
+
       - title: Reunión en el CEP El Hierro
         url: https://web.archive.org/web/20230324125049/https://www3.gobiernodecanarias.org/medusa/ecoescuela/cprofes/2023/02/24/reunion-en-el-cep-el-hierro/
         date: febrero 2023
