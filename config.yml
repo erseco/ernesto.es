@@ -196,8 +196,19 @@ params:
   jobs:
     list:
 
+
+  - position: Coordinador del Área de Tecnología Educativa (ATE)
+        dates: septiembre 2023 - Actualidad
+        company: Consejería de Educación, Formación Profesional, Actividad Física y Deportes
+        location: Gran Canaria
+        url: https://www3.gobiernodecanarias.org/medusa/ecoescuela/ate/
+        details: >-
+          - Servicios Web
+          - Protección de Datos
+
+
       - position: Asesor Educación Secundaria y Bachillerato
-        dates: septiembre 2020 - actualidad
+        dates: septiembre 2020 - 2023
         company: CEP El Hierro
         location: El Hierro
         url: https://www.gobiernodecanarias.org/educacion/web/centros/centros-profesorado/donde-estamos/centro-del-profesorado-de-el-hierro/
@@ -214,6 +225,8 @@ params:
 
           - Eje de Familia y Participación Educativa
 
+          - Eje de Patrimonio Social, Cultural e Histórico Canario
+
           - Planes de Formación en Centros
 
           - Asesoramiento en Metodología y Evaluación
@@ -225,7 +238,7 @@ params:
         dates: octubre 2019 - junio 2020
         company: IES Garoé
         location: El Hierro
-        url: https://iesgaroe.org
+        url: https://www3.gobiernodecanarias.org/medusa/edublog/iesgaroe/
         details: >-
           - Coordinación TIC
 
