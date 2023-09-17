@@ -50,20 +50,20 @@ params:
         url: 'mailto: info@ernesto.es'
         title: info@ernesto.es
 
-      - class: phone
-        icon: fa fa-phone
-        url: 'https://api.whatsapp.com/send?phone=34654594460&text=Hola, Ernesto!'
-        title: '654 594 460'
+      # - class: phone
+      #   icon: fa fa-phone
+      #   url: 'https://api.whatsapp.com/send?phone=34654594460&text=Hola, Ernesto!'
+      #   title: '654 594 460'
 
       - class: resume
         icon: fa fa-file-pdf
         url: https://docs.google.com/document/export?format=pdf&id=1T1AZMUG2nIeckalcBgzcFwXmD_hC3cTjJjuP2LEd3mE
         title: "currículum vitae"
 
-      - class: location
-        icon: fa fa-map-marker-alt
-        url: https://maps.google.es/maps?q=El%20Hierro,+Spain
-        title: "El Hierro, Spain"
+      # - class: location
+      #   icon: fa fa-map-marker-alt
+      #   url: https://maps.google.es/maps?q=El%20Hierro,+Spain
+      #   title: "El Hierro, Spain"
 
 
       # - class: linkedin

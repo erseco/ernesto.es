@@ -59,8 +59,9 @@
             <div class="profile-container">
                 <img id ="profile" class="profile rounded-circle" src="{{ .Site.BaseURL }}images/profile.png" alt="" />
                 <h1 class="name">{{ .Site.Params.profile.name }}</h1>
-                <h3 class="tagline">{{ .Site.Params.profile.tagline }}</h3>
-
+                <a href="https://api.whatsapp.com/send?phone=34654594460&text=Hola, Ernesto!">
+                    <h3 class="tagline">{{ .Site.Params.profile.tagline }}</h3>
+                </a>
                 <div class="translations">
                     {{ range .Translations }}
                     <a class="btn btn-translate" href="{{ .Permalink }}">{{upper .Lang }}</a>
