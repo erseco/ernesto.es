@@ -44,7 +44,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    {{ template "_internal/google_analytics_async.html" . }}
+    {{ template "_internal/google_analytics.html" . }}
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
     {{ template "_internal/schema.html" . }}
@@ -118,34 +118,6 @@
                 </div><!--//summary-->
             </section><!--//section-->
 
-            <section class="section experiences-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fa {{ .Site.Params.experiences.icon }}"></i></span>Experiencia</h2>
-
-                {{ range .Site.Params.jobs.list }}
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title item-title">{{ .position }}</h3>
-                            <div class="time">{{ .dates }}</div>
-                        </div><!--//upper-row-->
-
-                        {{ if .url }}
-                        <div class="company"><a href="{{ .url }}">{{ .company }}</a>, {{ .location }}</div>
-                        {{ else }}
-                        <div class="company">{{ .company }}, {{ .location }}</div>
-                        {{ end }}
-
-
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>{{ with .details }}{{ . | markdownify }}{{ end }}</p>
-                    </div><!--//details-->
-                </div><!--//item-->
-                {{ end }}
-
-            </section><!--//section-->
-
-
             <section class="section education-section">
                 <h2 class="section-title"><span class="icon-holder"><i class="{{ .Site.Params.education.icon }}"></i></span>Educación</h2>
                 {{ range .Site.Params.education.list }}
@@ -184,7 +156,33 @@
                 {{ end }}
 
             </section><!--//section-->
+            
+            <section class="section experiences-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fa {{ .Site.Params.experiences.icon }}"></i></span>Experiencia</h2>
 
+                {{ range .Site.Params.jobs.list }}
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title item-title">{{ .position }}</h3>
+                            <div class="time">{{ .dates }}</div>
+                        </div><!--//upper-row-->
+
+                        {{ if .url }}
+                        <div class="company"><a href="{{ .url }}">{{ .company }}</a>, {{ .location }}</div>
+                        {{ else }}
+                        <div class="company">{{ .company }}, {{ .location }}</div>
+                        {{ end }}
+
+
+                    </div><!--//meta-->
+                    <div class="details">
+                        <p>{{ with .details }}{{ . | markdownify }}{{ end }}</p>
+                    </div><!--//details-->
+                </div><!--//item-->
+                {{ end }}
+
+            </section><!--//section-->
 
             <section class="section articles-section">
                 <h2 class="section-title"><span class="icon-holder"><i class="fas {{ .Site.Params.articles.icon }}"></i></span>{{ .Site.Params.articles.title }}</h2>
