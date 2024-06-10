@@ -100,17 +100,19 @@ params:
       - degree: Máster en Investigación e Innovación en Currículum y Formación
         college: Universidad de Granada (UGR)
         url: https://masteres.ugr.es/curriculumyformacion/
-        dates: 2021 - 2022      
+        dates: 2021 - 2022
         
       - degree: Máster en Formación del Profesorado
         college: Universidad de Granada (UGR)
         url: https://masteres.ugr.es/profesorado/
         dates: 2018 - 2019
+        thesis: https://digibug.ugr.es/bitstream/handle/10481/84117/TFM_Profesorado%20SerranoCollado_Ernesto.pdf
 
       - degree: Máster en Ingeniería Informática
         college: Universidad de Granada (UGR)
         url: https://masteres.ugr.es/ing-informatica/
         dates: 2017 - 2018
+        thesis: https://digibug.ugr.es/bitstream/handle/10481/84114/TFM_Informatica_SerranoCollado_Ernesto.pdf
         list:
 
           - subject: Cloud Computing II
@@ -120,6 +122,7 @@ params:
         college: Universidad de Granada (UGR)
         url: https://grados.ugr.es/informatica/
         dates: 2013 - 2017
+        thesis: https://digibug.ugr.es/bitstream/handle/10481/84108/TFG_Serrano_Collado_Ernesto.pdf
         list:
 
           - subject: Algorítmica
