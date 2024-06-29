@@ -69,6 +69,18 @@ function initMap() {
         headerDisabled: true, // Deshabilita el botón de cerrar en el infowindow
     });
 
+
+
+    // Cierra el infowindow cuando se hace clic en el mapa
+    map.addListener("click", () => {
+        infowindow.close();
+    });
+
+    // Cierra el infowindow cuando se hace clic en el propio infowindow
+    google.maps.event.addListener(infowindow, 'closeclick', function() {
+        infowindow.close();
+    });
+
     // Importa la clase AdvancedMarkerElement de forma asíncrona
 
 // const {AdvancedMarkerElement} = await google.maps.importLibrary("marker");
