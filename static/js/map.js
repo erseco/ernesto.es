@@ -49,6 +49,7 @@ function initMap() {
 
 
     ];
+
     map = new google.maps.Map(document.getElementById('map'), {
          zoom: 2,
          center: new google.maps.LatLng(43.48437, 57.20528),
@@ -60,7 +61,8 @@ function initMap() {
     var marker, i;
 
     for (i = 0; i < locations.length; i++) {
-        marker = new google.maps.Marker({
+        // Uso de AdvancedMarkerElement en lugar de Marker
+        marker = new google.maps.marker.AdvancedMarkerElement({
              position: new google.maps.LatLng(locations[i][1], locations[i][2]),
              map: map
         });
