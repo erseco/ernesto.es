@@ -13,24 +13,21 @@
     <meta name="author" content="{{ .Site.Params.author }}">
     <link rel="shortcut icon" href="favicon.ico">
 
-
     <script defer src="{{ .Site.BaseURL }}js/color.js"></script>
     <script defer src="{{ .Site.BaseURL }}js/bender.js"></script>
     <script defer src="{{ .Site.BaseURL }}js/map.js"></script>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVLXM0pDL_Vd3o3oh_zGiUP5OAmYWlFxE&callback=initMap&libraries=&v=weekly" async defer></script>
 
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
     <!-- FontAwesome JS-->
-    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
     <script defer src="{{ .Site.BaseURL }}vendor/fontawesome/js/all.min.js"></script>
-    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnNx" crossorigin="anonymous"> -->
 
     <!-- Global CSS -->
     <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/bootstrap/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
 
 
     <!-- Theme CSS -->
@@ -38,12 +35,6 @@
     {{ $style := resources.Get "main.scss" | resources.ToCSS $options }}
     <link id="theme-style" rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
 
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
     {{ template "_internal/google_analytics.html" . }}
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
@@ -278,9 +269,6 @@
 
         </div><!--//container-->
     </footer><!--//footer-->
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVLXM0pDL_Vd3o3oh_zGiUP5OAmYWlFxE&callback=initMap&libraries=&v=weekly" async defer></script>
-
 
 </body>
 </html>
