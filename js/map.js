@@ -52,9 +52,17 @@ function initMap() {
     const position = { lat: 43.48437, lng: 57.20528 };
 
     map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 2,
-        center: position,
-        mapId: "8b8909e5da6fc74e", // Map ID is required for advanced markers.
+          zoom: 2,
+          center: position,
+          mapId: "8b8909e5da6fc74e",
+          mapTypeControl: true, // Mostrar control de tipo de mapa
+          mapTypeControlOptions: {
+             style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+             position: google.maps.ControlPosition.TOP_RIGHT,
+             mapTypeIds: ["roadmap", "satellite"], // Tipos de mapas a mostrar
+          },
+          streetViewControl: false, // Desactivar el botón de Street View
+        
     });
 
     var infowindow = new google.maps.InfoWindow();
