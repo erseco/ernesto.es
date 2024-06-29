@@ -35,19 +35,18 @@ function initMap() {
          ['Siem Reap',                       13.36710,   103.84481,  3],
          ['Lanzarote',                       29.04685,   -13.58997,  3],
          ['Lviv',                            49.83968,   24.02972,   3],
-         ['Fes',                             34.01812    ,-5.00785,  4],
+         ['Fes',                             34.01812,   -5.00785,   4],
          ['Merzouga',                        31.08017,   -4.01336,   4],
          ['Princeton',                       40.35730,   -74.66722,  4],
          ['Munich',                          48.135125,  11.581981,  4],
-         ['Sabinov',		               49.102821,  21.097860,  4],
-         ['Berlin',			               52.520008,  13.404954,  4],
-         ['L\'isle-sur-la-sorge',		     43.918660,  5.054390,   4],
-         ['Paris',			               48.856613,  2.352222,   4],
-         ['Manchester', 	                    53.483959, -2.244644,   4],
-         ['El Hierro',		               27.701660, -17.980230,  4],
+         ['Sabinov',                         49.102821,  21.097860,  4],
+         ['Berlin',                          52.520008,  13.404954,  4],
+         ['L\'isle-sur-la-sorge',            43.918660,  5.054390,   4],
+         ['Paris',                           48.856613,  2.352222,   4],
+         ['Manchester',                      53.483959, -2.244644,   4],
+         ['El Hierro',                       27.701660, -17.980230,  4],
          ['Las Palmas de Gran Canaria',      28.1235,   -15.436,     3],
          ['Ginebra',                         46.2044,   6.1432,     3]
-
     ];
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -60,17 +59,22 @@ function initMap() {
 
     var marker, i;
 
-    for (i = 0; i < locations.length; i++) {
-        marker = new google.maps.marker.AdvancedMarkerElement({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-            map: map
-        });
+    // Importa la clase AdvancedMarkerElement de forma asíncrona
+    google.maps.importLibrary("marker").then(function() {
+        for (i = 0; i < locations.length; i++) {
+            marker = new google.maps.marker.AdvancedMarkerElement({
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map
+            });
 
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-            return function() {
-                infowindow.setContent(locations[i][0]);
-                infowindow.open(map, marker);
-            }
-        })(marker, i));
-    }
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                    infowindow.setContent(locations[i][0]);
+                    infowindow.open(map, marker);
+                };
+            })(marker, i));
+        }
+    }).catch(function(error) {
+        console.error("Error al importar la biblioteca de marcadores:", error);
+    });
 }
