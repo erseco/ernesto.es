@@ -62,7 +62,7 @@ function initMap() {
     // Importa la clase AdvancedMarkerElement de forma asíncrona
     google.maps.importLibrary("marker").then(function() {
         for (i = 0; i < locations.length; i++) {
-            marker = new google.maps.marker.AdvancedMarkerElement({
+            marker = new AdvancedMarkerElement({
                 position: new google.maps.LatLng(locations[i][1], locations[i][2]),
                 map: map
             });
