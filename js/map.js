@@ -49,22 +49,28 @@ function initMap() {
          ['Ginebra',                         46.2044,   6.1432,     3]
     ];
 
-    map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 2,
-        center: new google.maps.LatLng(43.48437, 57.20528),
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
+
+     const position = { lat: 43.48437, lng: 57.20528 };
+
+     const map = new google.maps.Map(document.getElementById("map"),  {
+          zoom: 2,
+          center: position,
+          mapId: "8b8909e5da6fc74e", // Map ID is required for advanced markers.
+     });
+
 
     var infowindow = new google.maps.InfoWindow;
+
+
 
     var marker, i;
 
     // Importa la clase AdvancedMarkerElement de forma asíncrona
     google.maps.importLibrary("marker").then(function() {
         for (i = 0; i < locations.length; i++) {
-            marker = new AdvancedMarkerElement({
-                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                map: map
+            marker = new google.maps.marker.AdvancedMarkerElement({
+               map: map
+               position: new google.maps.LatLng(locations[i][1], locations[i][2]),
             });
 
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
