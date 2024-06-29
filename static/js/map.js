@@ -62,10 +62,12 @@ function initMap() {
              mapTypeIds: ["roadmap", "satellite"], // Tipos de mapas a mostrar
           },
           streetViewControl: false, // Desactivar el botón de Street View
-        
+          controlSize: 20,
     });
 
-    var infowindow = new google.maps.InfoWindow();
+    var infowindow = new google.maps.InfoWindow({
+        headerDisabled: true, // Deshabilita el botón de cerrar en el infowindow
+    });
 
     // Importa la clase AdvancedMarkerElement de forma asíncrona
 
