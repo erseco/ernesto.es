@@ -92,6 +92,13 @@ params:
   education:
     icon: fa fa-graduation-cap
     list:
+      - degree: Programa de Doctorado en Tecnologías de la Información y la Comunicación
+        college: Universidad de Granada (UGR)
+        url: https://doctorados.ugr.es/tic/
+        dates: 2024 - Actualidad
+          - subject: Juan Julián Merelo Guervos
+            grade: Director
+
       - degree: Máster en Ciberseguridad y Privacidad
         college: Universitat Oberta de Catalunya (UOC)
         url: https://estudios.uoc.edu/es/masters-universitarios/ciberseguridad-privacidad/presentacion
