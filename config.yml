@@ -96,6 +96,7 @@ params:
         college: Universidad de Granada (UGR)
         url: https://doctorados.ugr.es/tic/
         dates: 2024 - Actualidad
+        list:
           - subject: Juan Julián Merelo Guervos
             grade: Director
 
