@@ -5,7 +5,7 @@ enableMissingTranslationPlaceholders: true
 DefaultContentLanguage: es
 # theme: new-orbit
 # theme: ernestronic
-googleAnalytics: UA-89832-5
+googleAnalytics: G-XXXXXXXXXX  # Replace with your GA4 Measurement ID
 disableRSS: true
 disableSitemap: true
 disable404: false
