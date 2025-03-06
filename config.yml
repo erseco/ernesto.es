@@ -3,9 +3,6 @@ baseurl: 'https://ernesto.es/'
 languageCode: es-es
 enableMissingTranslationPlaceholders: true
 DefaultContentLanguage: es
-# theme: new-orbit
-# theme: ernestronic
-googleAnalytics: G-XXXXXXXXXX  # Replace with your GA4 Measurement ID
 disableRSS: true
 disableSitemap: true
 disable404: false
@@ -13,7 +10,10 @@ enableRobotsTXT: true
 
 disableKinds:
   - taxonomy
-  - taxonomyTerm
+
+minify:
+  disableXML: true
+  minifyOutput: true
 
 params:
 
@@ -27,6 +27,12 @@ params:
     - images/profile.png
 
   title: Ernesto Serrano - Solucionador de Problemas Informáticos
+
+  opengraph:
+    title: Ernesto Serrano - Solucionador de Problemas Informáticos
+    image: images/profile.png
+    type: profile
+
 
 # Theme styles
 
@@ -506,7 +512,7 @@ params:
     title: Apariciones en medios
     list:
     
-      - title: ¿Subir datos médicos a ChatGPT o Grok? La recomendación de expertos es no compartir información sensible con ningún chatbot
+      - title: ¿Subir datos médicos a ChatGPT o Grok?
         url: https://maldita.es/malditatecnologia/20250306/chatbots-ia-datos-sanitarios-privacidad/
         date: marzo 2025
         publisher: maldita.es
