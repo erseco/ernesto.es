@@ -1,0 +1,7 @@
+# Ernesto Serrano Collado
+
+> Ingeniero informático especializado en DevOps, SRE, ciberseguridad, alta disponibilidad y arquitecturas cloud basadas en contenedores. Para más información, visita https://ernesto.es
+
+## Más información
+
+- [ernesto.es](https://ernesto.es): Sitio web personal con currículum, experiencia, formación y publicaciones
