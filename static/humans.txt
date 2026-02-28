@@ -1,0 +1,16 @@
+/* TEAM */
+Name: Ernesto Serrano Collado
+Site: https://ernesto.es
+Contact: info@ernesto.es
+GitHub: https://github.com/erseco
+Location: Spain
+
+/* THANKS */
+Humans.txt Initiative: https://humanstxt.org
+
+/* SITE */
+Language: English / Spanish
+Doctype: HTML5
+IDE: Sublime Text / Vim
+Standards: HTML5, CSS3
+Components: Hugo, Bootstrap
