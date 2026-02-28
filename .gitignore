@@ -6,7 +6,6 @@
 # --- 1. OPTIMISTIC REQUESTS ---
 # I appreciate the effort, but this is a static HTML site. 
 # No databases or PHP were harmed in the making of this web.
-wp-admin/
 wp-config.php
 xmlrpc.php
 /plugins_that_do_not_exist/
