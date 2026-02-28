@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration &mdash; Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #1d2028;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Login card positioned absolutely so we can move it around */
+        #login-container {
+            width: 380px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: top 0.15s ease-out, left 0.15s ease-out;
+        }
+
+        .joomla-card {
+            background: #fff;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+
+        .joomla-header {
+            background: #1b78c8;
+            padding: 20px 28px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .joomla-header .brand {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .joomla-header .brand span {
+            color: #a8d4f5;
+            font-weight: 300;
+        }
+
+        .joomla-body {
+            padding: 28px;
+        }
+
+        .joomla-body label {
+            font-size: 0.85rem;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .joomla-body .btn-login {
+            background: #1b78c8;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            font-weight: 600;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .joomla-body .btn-login:hover {
+            background: #155fa0;
+            color: #fff;
+        }
+
+        /* Fake hacking terminal */
+        #terminal-screen {
+            display: none;
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 30px;
+            height: 100vh;
+            box-sizing: border-box;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            overflow-y: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .cursor::after {
+            content: '█';
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <div id="login-container">
+        <div class="joomla-card">
+            <div class="joomla-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48" fill="#fff">
+                    <path d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4zm0 6c3.9 0 7.4 1.4 10.1 3.8L13.8 34.1C11.4 31.4 10 27.9 10 24c0-7.7 6.3-14 14-14zm0 28c-3.9 0-7.4-1.4-10.1-3.8l20.3-20.3C36.6 16.6 38 20.1 38 24c0 7.7-6.3 14-14 14z"/>
+                </svg>
+                <div>
+                    <div class="brand">Joomla<span>!</span> Administration</div>
+                    <div style="font-size:0.75rem; opacity:0.8;">Control Panel</div>
+                </div>
+            </div>
+            <div class="joomla-body">
+                <form onsubmit="return false;">
+                    <div class="mb-3">
+                        <label for="mod_login_username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="mod_login_username" name="username" autocomplete="off">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mod_login_password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="mod_login_password" name="passwd" autocomplete="off">
+                    </div>
+                    <div class="mt-4">
+                        <button type="button" class="btn btn-login" id="fake-login-btn">Log in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fake terminal shown after clicking Log in or pressing Enter -->
+    <div id="terminal-screen"></div>
+
+    <script>
+        const loginContainer = document.getElementById('login-container');
+        const terminalScreen = document.getElementById('terminal-screen');
+
+        let isHacking = false;
+
+        // Move the login box to a random position on the screen
+        function moveBox() {
+            if (isHacking) return;
+
+            const boxWidth = loginContainer.offsetWidth;
+            const boxHeight = loginContainer.offsetHeight;
+            const randomLeft = Math.floor(Math.random() * (window.innerWidth - boxWidth));
+            const randomTop = Math.floor(Math.random() * (window.innerHeight - boxHeight));
+
+            // Disable the centering transform once the box starts moving
+            loginContainer.style.transform = 'none';
+            loginContainer.style.left = randomLeft + 'px';
+            loginContainer.style.top = randomTop + 'px';
+        }
+
+        // Escape on mouse hover or touch
+        loginContainer.addEventListener('mouseenter', moveBox);
+        loginContainer.addEventListener('touchstart', moveBox, { passive: true });
+
+        // Trigger the fake terminal when Enter is pressed
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter' && !isHacking) {
+                event.preventDefault();
+                startTerminal();
+            }
+        });
+
+        // Also trigger on button click
+        document.getElementById('fake-login-btn').addEventListener('click', startTerminal);
+
+        function startTerminal() {
+            if (isHacking) return;
+            isHacking = true;
+
+            loginContainer.style.display = 'none';
+            document.body.style.background = '#000';
+            terminalScreen.style.display = 'block';
+
+            const lines = [
+                "Initiating active defense protocol...",
+                "Analyzing attacker vulnerabilities...",
+                "Target IP detected. Executing reverse connection...",
+                "Local firewall bypass: SUCCESS.",
+                "Accessing device webcam... stream acquired.",
+                "Downloading browser history (decrypting incognito mode)...",
+                "Compromising files found: 42.",
+                "Preparing mass broadcast to all WhatsApp and email contacts...",
+                "Upload complete. Operation finished.",
+                "Have a great day. ;)"
+            ];
+
+            let delay = 500;
+
+            lines.forEach((line, index) => {
+                setTimeout(() => {
+                    const p = document.createElement('div');
+                    if (index === lines.length - 1) {
+                        p.innerHTML = '> ' + line + "<span class='cursor'></span>";
+                    } else {
+                        p.textContent = '> ' + line;
+                    }
+                    terminalScreen.appendChild(p);
+                    window.scrollTo(0, document.body.scrollHeight);
+                }, delay);
+
+                delay += 1000 + Math.random() * 1500;
+            });
+        }
+    </script>
+</body>
+</html>
