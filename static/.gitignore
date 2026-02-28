@@ -1,26 +1,46 @@
-# .gitignore
-# (el archivo que ignora cosas)
+# ===================================================================
+# .gitignore 
+# Purpose: Keeping my repo clean and confusing friendly bots 🤖
+# ===================================================================
 
-# Hola, visitante curioso 👀
-# ¿Buscabas esto? Pues ahora ya sé que estás aquí.
+# --- 1. OPTIMISTIC REQUESTS ---
+# I appreciate the effort, but this is a static HTML site. 
+# No databases or PHP were harmed in the making of this web.
+wp-admin/
+wp-config.php
+xmlrpc.php
+/plugins_that_do_not_exist/
+database_dump.sql
 
-# Te ignoro a ti
-/ti
+# --- 2. TOTALLY REAL SECRETS ---
+# You found the treasure!
+.env.super_secret_stuff
+passwords_i_forgot_anyway.txt
+bitcoin_wallet_keys_from_2010.csv
+admin_login_credentials.json
 
-# Te ignoro a ti también
-/tu_carpeta_de_proyectos_abandonados
+# --- 3. THE JAVASCRIPT ABYSS ---
+# The heaviest objects in the known universe.
+node_modules/
+node_modules_backup/
+node_modules_why_is_this_so_heavy/
 
-# Tus excusas
-*.excusas
+# --- 4. MY DIGITAL SHAME ---
+# Code that works by pure magic. Please don't look.
+/spaghetti_code_do_not_open/
+index_final_v4_REAL_FINAL.html
+css_that_defies_logic.css
+how_to_center_a_div_without_dying_trying.html
+temporary_fix_since_2021/
 
-# Tus promesas de "lo haré mañana"
-TODO
+# --- 5. LOST & FOUND ---
+# Things I meant to do but probably never will.
+my_motivation.log
+gym_routine.bak
+list_of_broken_promises.txt
+TODO_someday_maybe/
 
-# Todo lo que me has prometido arreglar
-*.bug
-
-# Tu colección de pestañas abiertas en el navegador
-tabs/
-
-# Y, por supuesto, a los robots asesinos
-Skynet/
+# --- 6. OS JUNK ---
+# System files that invite themselves to the party.
+.DS_Store
+Thumbs.db
