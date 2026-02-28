@@ -1,0 +1,26 @@
+# .gitignore
+# (el archivo que ignora cosas)
+
+# Hola, visitante curioso 👀
+# ¿Buscabas esto? Pues ahora ya sé que estás aquí.
+
+# Te ignoro a ti
+/ti
+
+# Te ignoro a ti también
+/tu_carpeta_de_proyectos_abandonados
+
+# Tus excusas
+*.excusas
+
+# Tus promesas de "lo haré mañana"
+TODO
+
+# Todo lo que me has prometido arreglar
+*.bug
+
+# Tu colección de pestañas abiertas en el navegador
+tabs/
+
+# Y, por supuesto, a los robots asesinos
+Skynet/
