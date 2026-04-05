@@ -78,9 +78,6 @@
                         {{ $decoyOne := index $decoys 0 }}
                         {{ $decoyTwo := index $decoys 1 }}
                         {{ $decoyThree := index $decoys 2 }}
-                        {{ if ge (len $decoys) 1 }}{{ $decoyOne = index $decoys 0 }}{{ end }}
-                        {{ if ge (len $decoys) 2 }}{{ $decoyTwo = index $decoys 1 }}{{ end }}
-                        {{ if ge (len $decoys) 3 }}{{ $decoyThree = index $decoys 2 }}{{ end }}
                         <a href="{{ .url }}">
                             <span>{{ index $emailParts 0 }}</span><em>{{ $decoyOne }}</em><span>@</span><i>{{ $decoyTwo }}</i><span>{{ index $emailParts 1 }}</span><b>{{ $decoyThree }}</b>
                         </a>
