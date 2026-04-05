@@ -68,8 +68,9 @@
                         {{ if eq .class "email" }}
                         {{ $emailParts := split .title "@" }}
                         {{ if eq (len $emailParts) 2 }}
+                        {{/* Three decoys let us break the address into visible chunks while varying the hidden text. */}}
                         {{ $requiredDecoys := 3 }}
-                        {{ $emailObfuscationConfig := .Site.Params.email_obfuscation }}
+                        {{ $emailObfuscationConfig := $.Site.Params.email_obfuscation }}
                         {{ $decoys := cond $emailObfuscationConfig (index $emailObfuscationConfig "decoys") nil }}
                         {{ if and $decoys (ge (len $decoys) $requiredDecoys) }}
                         <a href="{{ .url }}">
