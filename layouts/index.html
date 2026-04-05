@@ -67,9 +67,14 @@
                         <i class="{{ .icon }}"></i>
                         {{ if eq .class "email" }}
                         {{ $emailParts := split .title "@" }}
-                        <a href="{{ .url }}">
+                        {{ if eq (len $emailParts) 2 }}
+                        {{ $mailto := printf "mailto:%s&#64;%s" (index $emailParts 0) (index $emailParts 1) }}
+                        <a {{ printf "href=%q" $mailto | safeHTMLAttr }}>
                             <span>{{ index $emailParts 0 }}</span><em>contact</em><span>@</span><i>ernesto</i><span>{{ index $emailParts 1 }}</span><b>mail</b>
                         </a>
+                        {{ else }}
+                        <a href="{{ .url }}">{{ .title }}</a>
+                        {{ end }}
                         {{ else }}
                         <a href="{{ .url }}">{{ .title }}</a>
                         {{ end }}
