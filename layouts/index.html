@@ -68,9 +68,9 @@
                         {{ if eq .class "email" }}
                         {{ $emailParts := split .title "@" }}
                         {{ if eq (len $emailParts) 2 }}
-                        {{ $obfuscation := index .Site.Params "emailobfuscation" }}
-                        {{ $decoys := slice "soporte" "lateral" "contacto" }}
-                        {{ with $obfuscation }}
+                        {{ $emailObfuscationConfig := index .Site.Params "emailobfuscation" }}
+                        {{ $decoys := slice "buzon" "privado" "filtro" }}
+                        {{ with $emailObfuscationConfig }}
                         {{ with index . "decoys" }}
                         {{ $decoys = . }}
                         {{ end }}
