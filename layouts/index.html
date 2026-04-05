@@ -65,14 +65,21 @@
                 {{ range .Site.Params.contact.list }}
                     <li class="{{ .class }}">
                         <i class="{{ .icon }}"></i>
-                        {{ if eq .class "email" }}
-                        {{ $emailParts := split .title "@" }}
-                        {{ if eq (len $emailParts) 2 }}
                         {{/* Three decoys let us break the address into visible chunks while varying the hidden text. */}}
                         {{ $requiredDecoys := 3 }}
-                        {{ $emailObfuscationConfig := $.Site.Params.email_obfuscation }}
-                        {{ $decoys := cond $emailObfuscationConfig (index $emailObfuscationConfig "decoys") nil }}
-                        {{ if and $decoys (ge (len $decoys) $requiredDecoys) }}
+                        {{ $emailParts := slice }}
+                        {{ $decoys := slice }}
+                        {{ $useObfuscatedEmail := false }}
+                        {{ if eq .class "email" }}
+                        {{ $emailParts = split .title "@" }}
+                        {{ with $.Site.Params.email_obfuscation }}
+                        {{ $decoys = .decoys }}
+                        {{ end }}
+                        {{ if and (eq (len $emailParts) 2) (ge (len $decoys) $requiredDecoys) }}
+                        {{ $useObfuscatedEmail = true }}
+                        {{ end }}
+                        {{ end }}
+                        {{ if $useObfuscatedEmail }}
                         <a href="{{ .url }}">
                             <span>{{ index $emailParts 0 }}</span>
                             <span class="email-decoy email-decoy-one">{{ index $decoys 0 }}</span>
@@ -81,12 +88,6 @@
                             <span>{{ index $emailParts 1 }}</span>
                             <span class="email-decoy email-decoy-three">{{ index $decoys 2 }}</span>
                         </a>
-                        {{ else }}
-                        <a href="{{ .url }}">{{ .title }}</a>
-                        {{ end }}
-                        {{ else }}
-                        <a href="{{ .url }}">{{ .title }}</a>
-                        {{ end }}
                         {{ else }}
                         <a href="{{ .url }}">{{ .title }}</a>
                         {{ end }}
