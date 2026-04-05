@@ -68,11 +68,17 @@
                         {{ if eq .class "email" }}
                         {{ $emailParts := split .title "@" }}
                         {{ if eq (len $emailParts) 2 }}
-                        {{ $emailObfuscationConfig := index .Site.Params "email_obfuscation" }}
+                        {{ $requiredDecoys := 3 }}
+                        {{ $emailObfuscationConfig := .Site.Params.email_obfuscation }}
                         {{ $decoys := cond $emailObfuscationConfig (index $emailObfuscationConfig "decoys") nil }}
-                        {{ if and $decoys (ge (len $decoys) 3) }}
+                        {{ if and $decoys (ge (len $decoys) $requiredDecoys) }}
                         <a href="{{ .url }}">
-                            <span>{{ index $emailParts 0 }}</span><span class="email-decoy email-decoy-one">{{ index $decoys 0 }}</span><span>@</span><span class="email-decoy email-decoy-two">{{ index $decoys 1 }}</span><span>{{ index $emailParts 1 }}</span><span class="email-decoy email-decoy-three">{{ index $decoys 2 }}</span>
+                            <span>{{ index $emailParts 0 }}</span>
+                            <span class="email-decoy email-decoy-one">{{ index $decoys 0 }}</span>
+                            <span>@</span>
+                            <span class="email-decoy email-decoy-two">{{ index $decoys 1 }}</span>
+                            <span>{{ index $emailParts 1 }}</span>
+                            <span class="email-decoy email-decoy-three">{{ index $decoys 2 }}</span>
                         </a>
                         {{ else }}
                         <a href="{{ .url }}">{{ .title }}</a>
