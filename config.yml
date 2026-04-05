@@ -61,7 +61,7 @@ params:
       # Keep class: email to enable sidebar email obfuscation.
       - class: email
         icon: fa fa-envelope
-        url: 'mailto: info@ernesto.es'
+        url: 'mailto:info@ernesto.es'
         title: info@ernesto.es
 
       # - class: phone
