@@ -50,6 +50,7 @@ params:
     avatar: images/profile.png
 
   email_obfuscation:
+    # The sidebar email template expects exactly 3 decoys interspersed in the address.
     decoys:
       - soporte
       - lateral
@@ -57,6 +58,7 @@ params:
 
   contact:
     list:
+      # Keep class: email to enable sidebar email obfuscation.
       - class: email
         icon: fa fa-envelope
         url: 'mailto: info@ernesto.es'
