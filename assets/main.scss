@@ -316,6 +316,11 @@ p {
             .svg-inline--fa  {
                 font-size: 14px;
             }
+            // CSS display:none obfuscation based on:
+            // https://spencermortensen.com/articles/email-obfuscation/
+            .email-decoy {
+                display: none;
+            }
         }
     }
     .container-block {

@@ -63,7 +63,38 @@
             <div class="contact-container container-block" data-nosnippet="true">
                 <ul class="list-unstyled contact-list">
                 {{ range .Site.Params.contact.list }}
-                    <li class="{{ .class }}"><i class="{{ .icon }}"></i><a href="{{ .url }}">{{ .title }}</a></li>
+                    <li class="{{ .class }}">
+                        <i class="{{ .icon }}"></i>
+                        {{/* Use 3 decoys interspersed between the local part, "@", and domain segments. */}}
+                        {{ $requiredDecoys := 3 }}
+                        {{ $requiredEmailParts := 2 }}
+                        {{ $emailParts := slice }}
+                        {{ $decoys := slice }}
+                        {{ $useObfuscatedEmail := false }}
+                        {{ if eq .class "email" }}
+                        {{ $emailAddress := replace .url "mailto:" "" }}
+                        {{ $emailAddress = trim $emailAddress " " }}
+                        {{ $emailParts = split $emailAddress "@" }}
+                        {{ with $.Site.Params.email_obfuscation }}
+                        {{ $decoys = .decoys }}
+                        {{ end }}
+                        {{ if and (eq (len $emailParts) $requiredEmailParts) (ge (len $decoys) $requiredDecoys) }}
+                        {{ $useObfuscatedEmail = true }}
+                        {{ end }}
+                        {{ end }}
+                        {{ if $useObfuscatedEmail }}
+                        <a href="{{ .url }}">
+                            <span>{{ index $emailParts 0 }}</span>
+                            <span class="email-decoy email-decoy-one">{{ index $decoys 0 }}</span>
+                            <span>@</span>
+                            <span class="email-decoy email-decoy-two">{{ index $decoys 1 }}</span>
+                            <span>{{ index $emailParts 1 }}</span>
+                            <span class="email-decoy email-decoy-three">{{ index $decoys 2 }}</span>
+                        </a>
+                        {{ else }}
+                        <a href="{{ .url }}">{{ .title }}</a>
+                        {{ end }}
+                    </li>
                 {{ end }}
                 </ul>
             </div><!--//contact-container-->
@@ -272,4 +303,3 @@
 
 </body>
 </html>
-
