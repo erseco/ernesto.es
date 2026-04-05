@@ -65,17 +65,20 @@
                 {{ range .Site.Params.contact.list }}
                     <li class="{{ .class }}">
                         <i class="{{ .icon }}"></i>
-                        {{/* Three decoys let us break the address into visible chunks while varying the hidden text. */}}
+                        {{/* Use 3 decoys: one after the local part, one after "@", and one after the domain. */}}
                         {{ $requiredDecoys := 3 }}
+                        {{ $requiredEmailParts := 2 }}
                         {{ $emailParts := slice }}
                         {{ $decoys := slice }}
                         {{ $useObfuscatedEmail := false }}
                         {{ if eq .class "email" }}
-                        {{ $emailParts = split .title "@" }}
+                        {{ $emailAddress := replace .url "mailto:" "" }}
+                        {{ $emailAddress = replace $emailAddress " " "" }}
+                        {{ $emailParts = split $emailAddress "@" }}
                         {{ with $.Site.Params.email_obfuscation }}
                         {{ $decoys = .decoys }}
                         {{ end }}
-                        {{ if and (eq (len $emailParts) 2) (ge (len $decoys) $requiredDecoys) }}
+                        {{ if and (eq (len $emailParts) $requiredEmailParts) (ge (len $decoys) $requiredDecoys) }}
                         {{ $useObfuscatedEmail = true }}
                         {{ end }}
                         {{ end }}
