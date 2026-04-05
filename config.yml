@@ -49,6 +49,12 @@ params:
     tagline: Solucionador de Problemas
     avatar: images/profile.png
 
+  emailObfuscation:
+    decoys:
+      - soporte
+      - lateral
+      - contacto
+
   contact:
     list:
       - class: email
