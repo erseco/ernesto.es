@@ -65,7 +65,7 @@
                 {{ range .Site.Params.contact.list }}
                     <li class="{{ .class }}">
                         <i class="{{ .icon }}"></i>
-                        {{/* Use 3 decoys: one after the local part, one after "@", and one after the domain. */}}
+                        {{/* Use 3 decoys interspersed between the local part, "@", and domain segments. */}}
                         {{ $requiredDecoys := 3 }}
                         {{ $requiredEmailParts := 2 }}
                         {{ $emailParts := slice }}
@@ -73,7 +73,7 @@
                         {{ $useObfuscatedEmail := false }}
                         {{ if eq .class "email" }}
                         {{ $emailAddress := replace .url "mailto:" "" }}
-                        {{ $emailAddress = replace $emailAddress " " "" }}
+                        {{ $emailAddress = trim $emailAddress " " }}
                         {{ $emailParts = split $emailAddress "@" }}
                         {{ with $.Site.Params.email_obfuscation }}
                         {{ $decoys = .decoys }}
