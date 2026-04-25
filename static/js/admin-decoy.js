@@ -177,10 +177,10 @@
             '      <div class="intel-panel-header">',
             '        <span class="intel-panel-title">Observed client telemetry</span>',
             '      </div>',
-            '      <p class="intel-summary">Nada sale de tu navegador, pero sí puedo enseñarte la huella básica que cualquier web ya ve cuando aterrizas aquí.</p>',
+            '      <p class="intel-summary">Nothing leaves your browser, but this panel can still show the basic fingerprint that any website already sees when you land here.</p>',
             '      <div class="intel-highlight" data-intel-highlight></div>',
             '      <div class="intel-grid" data-intel-grid></div>',
-            '      <div class="intel-footnote" data-footnote hidden>Tranqui: esto es una broma local para curiosos que aterrizan en rutas como <code>/wp-admin</code> o <code>/admin</code>. No se envía, guarda ni comparte nada.</div>',
+            '      <div class="intel-footnote" data-footnote hidden>Relax: this is a local-only prank for curious visitors landing on routes like <code>/wp-admin</code> or <code>/admin</code>. Nothing is sent, stored or shared.</div>',
             '    </aside>',
             '  </div>',
             '</div>'
