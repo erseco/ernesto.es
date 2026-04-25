@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In &lsaquo; WordPress</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/admin-decoy.css">
     <style>
         body {
             background: #f1f1f1;
@@ -62,26 +63,6 @@
             font-size: 13px;
         }
 
-        /* Fake hacking terminal */
-        #terminal-screen {
-            display: none;
-            background-color: #000;
-            color: #0f0;
-            font-family: 'Courier New', Courier, monospace;
-            padding: 30px;
-            height: 100vh;
-            box-sizing: border-box;
-            font-size: 1.2rem;
-            line-height: 1.6;
-            overflow-y: auto;
-        }
-
-        .cursor::after {
-            content: '█';
-            animation: blink 1s step-start infinite;
-        }
-
-        @keyframes blink { 50% { opacity: 0; } }
     </style>
 </head>
 <body>
@@ -108,80 +89,6 @@
     <!-- Fake terminal shown after clicking Log In or pressing Enter -->
     <div id="terminal-screen"></div>
 
-    <script>
-        const loginContainer = document.getElementById('login-container');
-        const terminalScreen = document.getElementById('terminal-screen');
-
-        let isHacking = false;
-
-        // Move the login box to a random position on the screen
-        function moveBox() {
-            if (isHacking) return;
-
-            const boxWidth = loginContainer.offsetWidth;
-            const boxHeight = loginContainer.offsetHeight;
-            const randomLeft = Math.floor(Math.random() * (window.innerWidth - boxWidth));
-            const randomTop = Math.floor(Math.random() * (window.innerHeight - boxHeight));
-
-            // Disable the centering transform once the box starts moving
-            loginContainer.style.transform = 'none';
-            loginContainer.style.left = randomLeft + 'px';
-            loginContainer.style.top = randomTop + 'px';
-        }
-
-        // Escape on mouse hover or touch
-        loginContainer.addEventListener('mouseenter', moveBox);
-        loginContainer.addEventListener('touchstart', moveBox, { passive: true });
-
-        // Trigger the fake terminal when Enter is pressed
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Enter' && !isHacking) {
-                event.preventDefault();
-                startTerminal();
-            }
-        });
-
-        // Also trigger on button click
-        document.getElementById('fake-login-btn').addEventListener('click', startTerminal);
-
-        function startTerminal() {
-            if (isHacking) return;
-            isHacking = true;
-
-            loginContainer.style.display = 'none';
-            document.body.style.background = '#000';
-            terminalScreen.style.display = 'block';
-
-            const lines = [
-                "Initiating active defense protocol...",
-                "Analyzing attacker vulnerabilities...",
-                "Target IP detected. Executing reverse connection...",
-                "Local firewall bypass: SUCCESS.",
-                "Accessing device webcam... stream acquired.",
-                "Downloading browser history (decrypting incognito mode)...",
-                "Compromising files found: 42.",
-                "Preparing mass broadcast to all WhatsApp and email contacts...",
-                "Upload complete. Operation finished.",
-                "Have a great day. ;)"
-            ];
-
-            let delay = 500;
-
-            lines.forEach((line, index) => {
-                setTimeout(() => {
-                    const p = document.createElement('div');
-                    if (index === lines.length - 1) {
-                        p.innerHTML = '> ' + line + "<span class='cursor'></span>";
-                    } else {
-                        p.textContent = '> ' + line;
-                    }
-                    terminalScreen.appendChild(p);
-                    window.scrollTo(0, document.body.scrollHeight);
-                }, delay);
-
-                delay += 1000 + Math.random() * 1500;
-            });
-        }
-    </script>
+    <script src="/js/admin-decoy.js"></script>
 </body>
 </html>
