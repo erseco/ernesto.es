@@ -22,7 +22,7 @@
     inset: 0;
     z-index: 9999;
     overflow: auto;
-    padding: clamp(16px, 3vw, 32px);
+    padding: clamp(12px, 2vw, 20px);
     color: #b8ffbf;
     background:
         radial-gradient(circle at top right, rgba(44, 255, 140, 0.14), transparent 32%),
@@ -69,7 +69,7 @@
 
 .terminal-shell {
     position: relative;
-    max-width: 1400px;
+    max-width: 1360px;
     margin: 0 auto;
 }
 
@@ -78,8 +78,8 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 20px;
+    gap: 12px;
+    margin-bottom: 14px;
 }
 
 .terminal-title-group {
@@ -144,12 +144,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 12px;
+    gap: 10px;
 }
 
 .status-chip {
     min-width: 150px;
-    padding: 10px 14px;
+    padding: 8px 12px;
     border: 1px solid var(--decoy-accent-dim);
     border-radius: 12px;
     background: rgba(2, 17, 13, 0.78);
@@ -175,8 +175,9 @@
 
 .terminal-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.9fr);
-    gap: 18px;
+    grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.88fr);
+    gap: 14px;
+    align-items: start;
 }
 
 .terminal-console,
@@ -186,13 +187,17 @@
     border-radius: 18px;
     background: rgba(2, 9, 7, 0.78);
     backdrop-filter: blur(8px);
+    max-height: calc(100vh - 112px);
+    overflow: auto;
     box-shadow:
         inset 0 0 0 1px rgba(26, 69, 47, 0.38),
         0 24px 80px rgba(0, 0, 0, 0.42);
 }
 
 .terminal-console {
-    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
 }
 
 .terminal-console-header,
@@ -201,8 +206,8 @@
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    padding-bottom: 14px;
-    margin-bottom: 16px;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
     border-bottom: 1px solid rgba(103, 255, 161, 0.14);
 }
 
@@ -234,12 +239,12 @@
 .intel-highlight {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    margin: 0 0 16px;
+    gap: 10px;
+    margin: 0 0 14px;
 }
 
 .intel-highlight-card {
-    padding: 14px;
+    padding: 12px;
     border: 1px solid var(--decoy-accent-dim);
     border-radius: 14px;
     background: linear-gradient(180deg, rgba(12, 31, 22, 0.9), rgba(4, 11, 8, 0.92));
@@ -267,7 +272,10 @@
 }
 
 .terminal-output {
-    min-height: min(62vh, 720px);
+    flex: 1 1 auto;
+    min-height: min(42vh, 420px);
+    overflow: auto;
+    padding-right: 4px;
     white-space: pre-wrap;
     word-break: break-word;
 }
@@ -321,8 +329,8 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 18px;
-    padding-top: 16px;
+    margin-top: 14px;
+    padding-top: 14px;
     border-top: 1px solid rgba(103, 255, 161, 0.12);
     color: rgba(211, 255, 219, 0.85);
 }
@@ -346,7 +354,7 @@
 }
 
 .intel-panel {
-    padding: 16px;
+    padding: 14px;
 }
 
 .intel-summary {
@@ -358,13 +366,13 @@
 
 .intel-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 12px;
-    margin-top: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 14px;
 }
 
 .intel-card {
-    padding: 14px;
+    padding: 12px;
     border: 1px solid rgba(99, 255, 160, 0.12);
     border-radius: 14px;
     background:
@@ -427,6 +435,11 @@
 @media (max-width: 960px) {
     .terminal-grid {
         grid-template-columns: 1fr;
+    }
+
+    .terminal-console,
+    .intel-panel {
+        max-height: none;
     }
 
     .intel-highlight {
