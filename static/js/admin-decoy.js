@@ -53,7 +53,7 @@
         return "Unknown browser";
     }
 
-    function hashSignature(input) {
+    function hashClientFingerprint(input) {
         let hash = 2166136261;
 
         for (let index = 0; index < input.length; index += 1) {
@@ -100,7 +100,7 @@
             : "none";
         const doNotTrack = navigator.doNotTrack === "1" || window.doNotTrack === "1" ? "enabled" : "disabled";
         const timeString = new Date().toLocaleString();
-        const sessionSignature = hashSignature([
+        const sessionSignature = hashClientFingerprint([
             navigator.userAgent,
             language,
             viewport,
@@ -328,6 +328,8 @@
         let columns = [];
         let width = window.innerWidth;
         let height = window.innerHeight;
+        const computedStyles = window.getComputedStyle(document.documentElement);
+        const monoFontStack = computedStyles.getPropertyValue("--decoy-font-stack").trim() || '"JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace';
 
         function resize() {
             const ratio = window.devicePixelRatio || 1;
@@ -347,7 +349,7 @@
         function draw() {
             context.fillStyle = "rgba(2, 7, 5, 0.16)";
             context.fillRect(0, 0, width, height);
-            context.font = fontSize + 'px "JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace';
+            context.font = fontSize + "px " + monoFontStack;
 
             columns.forEach(function (y, index) {
                 const text = glyphs[Math.floor(Math.random() * glyphs.length)];

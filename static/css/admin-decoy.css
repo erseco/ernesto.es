@@ -4,6 +4,7 @@
     --decoy-accent-soft: rgba(0, 255, 156, 0.08);
     --decoy-accent-ink: #d9ffe7;
     --decoy-accent-glow: 0 0 8px rgba(0, 255, 156, 0.45), 0 0 24px rgba(0, 255, 156, 0.18);
+    --decoy-font-stack: "JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 .decoy-terminal-open #login-container,
@@ -27,7 +28,7 @@
         radial-gradient(circle at top right, rgba(44, 255, 140, 0.14), transparent 32%),
         radial-gradient(circle at bottom left, rgba(0, 189, 214, 0.12), transparent 28%),
         linear-gradient(135deg, #020403 0%, #07110d 52%, #030504 100%);
-    font-family: "JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-family: var(--decoy-font-stack);
     text-shadow: 0 0 10px rgba(88, 255, 155, 0.18);
 }
 
