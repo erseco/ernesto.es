@@ -201,7 +201,7 @@
             '</article>',
             '<article class="intel-highlight-card">',
             '  <strong>Primary signal</strong>',
-            '  <span>' + escapeHtml(lookup.Browser + " · " + lookup.Platform) + '</span>',
+            '  <span>' + escapeHtml(lookup.Browser) + ' · ' + escapeHtml(lookup.Platform) + '</span>',
             '</article>'
         ].join("");
 
@@ -347,7 +347,7 @@
         function draw() {
             context.fillStyle = "rgba(2, 7, 5, 0.16)";
             context.fillRect(0, 0, width, height);
-            context.font = fontSize + 'px "JetBrains Mono", monospace';
+            context.font = fontSize + 'px "JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace';
 
             columns.forEach(function (y, index) {
                 const text = glyphs[Math.floor(Math.random() * glyphs.length)];
