@@ -140,10 +140,12 @@
 
     function terminalTemplate() {
         return [
+            '<canvas class="terminal-rain" data-rain aria-hidden="true"></canvas>',
             '<div class="terminal-shell">',
             '  <div class="terminal-header">',
             '    <div class="terminal-title-group">',
             '      <span class="terminal-badge">Active defense / decoy mode</span>',
+            '      <span class="terminal-rec">REC</span>',
             '      <h1 class="terminal-heading">Intrusion trap engaged</h1>',
             '      <p class="terminal-subheading">Runtime telemetry · local browser fingerprint · theatrical countermeasures</p>',
             '    </div>',
@@ -176,6 +178,7 @@
             '        <span class="intel-panel-title">Observed client telemetry</span>',
             '      </div>',
             '      <p class="intel-summary">Nada sale de tu navegador, pero sí puedo enseñarte la huella básica que cualquier web ya ve cuando aterrizas aquí.</p>',
+            '      <div class="intel-highlight" data-intel-highlight></div>',
             '      <div class="intel-grid" data-intel-grid></div>',
             '      <div class="intel-footnote" data-footnote hidden>Tranqui: esto es una broma local para curiosos que aterrizan en rutas como <code>/wp-admin</code> o <code>/admin</code>. No se envía, guarda ni comparte nada.</div>',
             '    </aside>',
@@ -188,7 +191,20 @@
         terminalScreen.scrollTop = terminalScreen.scrollHeight;
     }
 
-    function renderIntel(intelGrid, intel) {
+    function renderIntel(intelGrid, intelHighlight, intel) {
+        const lookup = intelMap(intel);
+
+        intelHighlight.innerHTML = [
+            '<article class="intel-highlight-card">',
+            '  <strong>Fingerprint ID</strong>',
+            '  <span><code>' + escapeHtml(lookup["Session hash"]) + '</code></span>',
+            '</article>',
+            '<article class="intel-highlight-card">',
+            '  <strong>Primary signal</strong>',
+            '  <span>' + escapeHtml(lookup.Browser + " · " + lookup.Platform) + '</span>',
+            '</article>'
+        ].join("");
+
         intelGrid.innerHTML = intel.map(function (item) {
             return [
                 '<article class="intel-card">',
@@ -225,7 +241,7 @@
             await sleep(speed + Math.random() * 14);
         }
 
-        await sleep(step.pause || 260);
+        await sleep(step.pause ?? 260);
     }
 
     function buildScript(intelLookup) {
@@ -296,6 +312,63 @@
         loginContainer.style.top = randomTop + "px";
     }
 
+    function startMatrixRain(canvas) {
+        if (!canvas || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            return;
+        }
+
+        const context = canvas.getContext("2d");
+
+        if (!context) {
+            return;
+        }
+
+        const glyphs = "01アイウエオカキクケコサシスセソABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let fontSize = 16;
+        let columns = [];
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+
+        function resize() {
+            const ratio = window.devicePixelRatio || 1;
+            width = window.innerWidth;
+            height = window.innerHeight;
+
+            canvas.width = width * ratio;
+            canvas.height = height * ratio;
+            canvas.style.width = width + "px";
+            canvas.style.height = height + "px";
+            context.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+            fontSize = width < 640 ? 13 : 16;
+            columns = Array(Math.ceil(width / fontSize)).fill(0);
+        }
+
+        function draw() {
+            context.fillStyle = "rgba(2, 7, 5, 0.16)";
+            context.fillRect(0, 0, width, height);
+            context.font = fontSize + 'px "JetBrains Mono", monospace';
+
+            columns.forEach(function (y, index) {
+                const text = glyphs[Math.floor(Math.random() * glyphs.length)];
+                const x = index * fontSize;
+
+                context.fillStyle = Math.random() > 0.96 ? "#ffffff" : "#00ff9c";
+                context.fillText(text, x, y);
+
+                columns[index] = y > height + Math.random() * 800
+                    ? 0
+                    : y + fontSize;
+            });
+
+            window.requestAnimationFrame(draw);
+        }
+
+        resize();
+        window.addEventListener("resize", resize);
+        window.requestAnimationFrame(draw);
+    }
+
     async function startTerminal() {
         if (isHacking) {
             return;
@@ -310,14 +383,17 @@
         const output = terminalScreen.querySelector("[data-terminal-output]");
         const liveCommand = terminalScreen.querySelector("[data-live-command]");
         const intelGrid = terminalScreen.querySelector("[data-intel-grid]");
+        const intelHighlight = terminalScreen.querySelector("[data-intel-highlight]");
         const alertLevel = terminalScreen.querySelector("[data-alert-level]");
         const route = terminalScreen.querySelector("[data-route]");
         const footnote = terminalScreen.querySelector("[data-footnote]");
+        const rainCanvas = terminalScreen.querySelector("[data-rain]");
         const intel = collectClientIntel();
         const lookup = intelMap(intel);
 
         route.textContent = window.location.pathname || "/";
-        renderIntel(intelGrid, intel);
+        renderIntel(intelGrid, intelHighlight, intel);
+        startMatrixRain(rainCanvas);
 
         for (const step of buildScript(lookup)) {
             await typeLine(output, liveCommand, step);
