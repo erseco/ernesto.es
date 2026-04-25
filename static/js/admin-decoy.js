@@ -329,7 +329,16 @@
         let width = window.innerWidth;
         let height = window.innerHeight;
         const computedStyles = window.getComputedStyle(document.documentElement);
-        const monoFontStack = computedStyles.getPropertyValue("--decoy-font-stack").trim() || '"JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace';
+        const fallbackMonoFontStack = [
+            "'JetBrains Mono'",
+            "'Fira Code'",
+            "'SFMono-Regular'",
+            "Consolas",
+            "'Liberation Mono'",
+            "Menlo",
+            "monospace"
+        ].join(", ");
+        const monoFontStack = computedStyles.getPropertyValue("--decoy-font-stack").trim() || fallbackMonoFontStack;
 
         function resize() {
             const ratio = window.devicePixelRatio || 1;
