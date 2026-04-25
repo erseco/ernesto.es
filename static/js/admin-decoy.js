@@ -187,7 +187,12 @@
         ].join("");
     }
 
-    function scrollTerminal() {
+    function scrollTerminal(output) {
+        if (output) {
+            output.scrollTop = output.scrollHeight;
+            return;
+        }
+
         terminalScreen.scrollTop = terminalScreen.scrollHeight;
     }
 
@@ -231,13 +236,13 @@
         output.appendChild(line);
 
         liveCommand.textContent = step.command || "simulating...";
-        scrollTerminal();
+        scrollTerminal(output);
 
         const speed = step.speed || 20;
 
         for (const character of step.text) {
             content.textContent += character;
-            scrollTerminal();
+            scrollTerminal(output);
             await sleep(speed + Math.random() * 14);
         }
 
@@ -413,7 +418,7 @@
         alertLevel.textContent = "parody / local-only";
         liveCommand.textContent = "idle";
         footnote.hidden = false;
-        scrollTerminal();
+        scrollTerminal(output);
     }
 
     loginContainer.addEventListener("mouseenter", moveBox);
