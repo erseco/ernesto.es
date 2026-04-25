@@ -5,210 +5,421 @@
   <title>phpinfo()</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    :root {
-      --border: #666699;
-      --head: #9999cc;
-      --cellk: #ccccff;
-      --cellv: #eeeeff;
-      --title: #8892bf;
-    }
-
-    * { box-sizing: border-box; }
-
     body {
-      margin: 0;
+      margin: 8px;
       background: #fff;
-      color: #000;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      line-height: 1.35;
+      color: #222;
+      font-family: sans-serif;
     }
 
-    .top {
-      background: var(--title);
-      color: #fff;
-      text-align: center;
-      padding: 18px 12px;
-      font-size: 34px;
-      font-weight: bold;
-      border-bottom: 2px solid var(--border);
+    td,
+    th,
+    h1,
+    h2 {
+      font-family: sans-serif;
     }
 
-    .subtop {
-      text-align: center;
-      padding: 10px 12px 0;
-      color: #444;
-      font-size: 13px;
+    a {
+      color: #000099;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     table {
-      width: min(1100px, 96%);
-      margin: 18px auto;
       border-collapse: collapse;
-      table-layout: fixed;
+      border: 0;
+      width: min(960px, 100%);
+      box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.18);
     }
 
-    th {
-      background: var(--head);
-      color: #fff;
-      padding: 7px 8px;
-      border: 1px solid var(--border);
+    .center {
+      text-align: center;
+    }
+
+    .center table {
+      margin: 1em auto;
       text-align: left;
-      font-size: 15px;
     }
 
-    td {
-      border: 1px solid var(--border);
-      padding: 6px 8px;
-      vertical-align: top;
-      word-wrap: break-word;
+    .center th {
+      text-align: center;
     }
 
-    td.key {
-      width: 34%;
-      background: var(--cellk);
+    td,
+    th {
+      border: 1px solid #666699;
+      font-size: 75%;
+      vertical-align: baseline;
+      padding: 4px 6px;
+    }
+
+    h1 {
+      font-size: 150%;
+      margin: 0 0 12px;
+    }
+
+    h2 {
+      font-size: 125%;
+      margin: 20px 0 0;
+    }
+
+    .p {
+      text-align: left;
+      margin: 0 auto 1em;
+      width: min(960px, 100%);
+    }
+
+    .h {
+      background: #9999cc;
+      color: #fff;
       font-weight: bold;
     }
 
-    td.val {
-      background: var(--cellv);
+    .e {
+      background: #ccccff;
+      color: #000;
+      font-weight: bold;
+      width: 34%;
     }
 
-    .footer {
-      width: min(1100px, 96%);
-      margin: 28px auto 36px;
-      text-align: center;
-      color: #666;
-      font-size: 12px;
+    .v {
+      background: #eeeeff;
+      color: #000;
+      max-width: 0;
+      overflow-wrap: anywhere;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 2px 7px;
-      border: 1px solid #5a5aa0;
-      background: #dfe3ff;
-      color: #333;
-      border-radius: 999px;
-      font-size: 12px;
-      margin-left: 6px;
-      vertical-align: middle;
+    .logo {
+      float: right;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 88px;
+      min-height: 44px;
+      margin-left: 16px;
+      border: 1px solid #666699;
+      background: linear-gradient(180deg, #8f98c9 0%, #6571b1 100%);
+      color: #fff;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      text-transform: lowercase;
+      box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.18);
     }
 
     .mono {
       font-family: "Courier New", Courier, monospace;
     }
+
+    hr {
+      width: min(960px, 100%);
+      border: 0;
+      border-top: 1px solid #666699;
+      margin: 1em auto;
+    }
   </style>
 </head>
 <body>
-  <div class="top">
-    PHP Version 6.3.0
-    <span class="badge">definitely stable</span>
+  <div class="center">
+    <div class="logo">php</div>
+    <h1>PHP Version 6.3.0</h1>
   </div>
 
-  <div class="subtop">
-    System: GitHub Pages 5.&#x221e; pretending to be Apache &middot; Build Date: 31-Feb-2026 &middot; Configuration: Production-ish
+  <div class="p">
+    <table>
+      <tr class="h">
+        <th colspan="2">phpinfo()</th>
+      </tr>
+      <tr>
+        <td class="e">System</td>
+        <td class="v">Linux satire-host 6.3.0-php #1 SMP PRETEND_DYNAMIC x86_64</td>
+      </tr>
+      <tr>
+        <td class="e">Build Date</td>
+        <td class="v">31-Feb-2026 25:61:61 UTC</td>
+      </tr>
+      <tr>
+        <td class="e">Build System</td>
+        <td class="v">Autoconf, duct tape, and vibes</td>
+      </tr>
+      <tr>
+        <td class="e">Server API</td>
+        <td class="v">HyperText Mood Processor</td>
+      </tr>
+      <tr>
+        <td class="e">Virtual Directory Support</td>
+        <td class="v">enabled, spiritually</td>
+      </tr>
+      <tr>
+        <td class="e">Configuration File (php.ini) Path</td>
+        <td class="v mono">/etc/php/6.3/imaginary</td>
+      </tr>
+      <tr>
+        <td class="e">Loaded Configuration File</td>
+        <td class="v mono">/etc/php/6.3/imaginary/php.ini</td>
+      </tr>
+      <tr>
+        <td class="e">Scan this dir for additional .ini files</td>
+        <td class="v mono">/etc/php/6.3/conf.d:/opt/hope/conf.d</td>
+      </tr>
+      <tr>
+        <td class="e">Additional .ini files parsed</td>
+        <td class="v mono">20-opcache.ini, 30-sarcasm.ini, 99-bad-ideas.ini</td>
+      </tr>
+      <tr>
+        <td class="e">PHP API</td>
+        <td class="v">20260231</td>
+      </tr>
+      <tr>
+        <td class="e">PHP Extension</td>
+        <td class="v">2026fiction</td>
+      </tr>
+      <tr>
+        <td class="e">Zend Extension</td>
+        <td class="v">420260231</td>
+      </tr>
+      <tr>
+        <td class="e">Thread Safety</td>
+        <td class="v">sometimes</td>
+      </tr>
+      <tr>
+        <td class="e">Zend Signal Handling</td>
+        <td class="v">enabled unless observed</td>
+      </tr>
+      <tr>
+        <td class="e">Zend Memory Manager</td>
+        <td class="v">enabled, memory not included</td>
+      </tr>
+      <tr>
+        <td class="e">Zend Multibyte Support</td>
+        <td class="v">enabled, comprehension sold separately</td>
+      </tr>
+      <tr>
+        <td class="e">IPv6 Support</td>
+        <td class="v">yes, but only on Tuesdays</td>
+      </tr>
+      <tr>
+        <td class="e">DTrace Support</td>
+        <td class="v">enabled in PowerPoint</td>
+      </tr>
+      <tr>
+        <td class="e">Registered PHP Streams</td>
+        <td class="v">https, ftps, file, phar, coffee, regret, stackoverflow, localhost-but-it-works-on-my-machine</td>
+      </tr>
+      <tr>
+        <td class="e">Registered Stream Socket Transports</td>
+        <td class="v">tcp, udp, unix, tls, feelings</td>
+      </tr>
+      <tr>
+        <td class="e">Registered Stream Filters</td>
+        <td class="v">string.rot13, markdown.strip, excuse.inflate, optimism.deflate</td>
+      </tr>
+    </table>
   </div>
 
-  <table>
-    <tr><th colspan="2">PHP Core</th></tr>
-    <tr><td class="key">PHP Version</td><td class="val">6.3.0 Non-Existent Release Candidate 4</td></tr>
-    <tr><td class="key">System</td><td class="val">Linux satire-host 6.3.0-php #1 SMP PRETEND_DYNAMIC x86_64</td></tr>
-    <tr><td class="key">Build Date</td><td class="val">31-Feb-2026 25:61:61 UTC</td></tr>
-    <tr><td class="key">Build System</td><td class="val">Autoconf, duct tape, and vibes</td></tr>
-    <tr><td class="key">Server API</td><td class="val">HyperText Mood Processor</td></tr>
-    <tr><td class="key">Virtual Directory Support</td><td class="val">enabled, spiritually</td></tr>
-    <tr><td class="key">Configuration File (php.ini) Path</td><td class="val mono">/etc/php/6.3/imaginary</td></tr>
-    <tr><td class="key">Loaded Configuration File</td><td class="val mono">/etc/php/6.3/imaginary/php.ini</td></tr>
-    <tr><td class="key">Scan this dir for additional .ini files</td><td class="val mono">/etc/php/6.3/conf.d:/opt/hope/conf.d</td></tr>
-    <tr><td class="key">Additional .ini files parsed</td><td class="val mono">20-opcache.ini, 30-sarcasm.ini, 99-bad-ideas.ini</td></tr>
-    <tr><td class="key">Thread Safety</td><td class="val">sometimes</td></tr>
-    <tr><td class="key">Zend Signal Handling</td><td class="val">enabled unless observed</td></tr>
-    <tr><td class="key">Zend Memory Manager</td><td class="val">enabled, memory not included</td></tr>
-    <tr><td class="key">Zend Multibyte Support</td><td class="val">enabled, comprehension sold separately</td></tr>
-    <tr><td class="key">IPv6 Support</td><td class="val">yes, but only on Tuesdays</td></tr>
-    <tr><td class="key">DTrace Support</td><td class="val">enabled in PowerPoint</td></tr>
-  </table>
+  <h2 class="center">Zend Engine</h2>
+  <div class="p">
+    <table>
+      <tr class="h">
+        <th>Directive</th>
+        <th>Local Value</th>
+        <th>Master Value</th>
+      </tr>
+      <tr>
+        <td class="e">Zend Engine Version</td>
+        <td class="v">4.6.3-plausible-fiction</td>
+        <td class="v">4.6.3-plausible-fiction</td>
+      </tr>
+      <tr>
+        <td class="e">Zend Extension Build</td>
+        <td class="v">API630250225,NTS,unverified</td>
+        <td class="v">API630250225,NTS,unverified</td>
+      </tr>
+      <tr>
+        <td class="e">opcache.enable</td>
+        <td class="v">On</td>
+        <td class="v">On</td>
+      </tr>
+      <tr>
+        <td class="e">opcache.jit</td>
+        <td class="v">just-in-theory</td>
+        <td class="v">just-in-theory</td>
+      </tr>
+      <tr>
+        <td class="e">zend.assertions</td>
+        <td class="v">-1</td>
+        <td class="v">-1</td>
+      </tr>
+    </table>
+  </div>
 
-  <table>
-    <tr><th colspan="2">Zend Engine</th></tr>
-    <tr><td class="key">Zend Engine Version</td><td class="val">4.6.3-plausible-fiction</td></tr>
-    <tr><td class="key">Zend Extension Build</td><td class="val">API630250225,NTS,unverified</td></tr>
-    <tr><td class="key">Opcode Cache</td><td class="val">enabled, emotionally</td></tr>
-    <tr><td class="key">JIT</td><td class="val">enabled, just-in-theory</td></tr>
-    <tr><td class="key">Garbage Collector</td><td class="val">active, occasionally collects bugs instead</td></tr>
-  </table>
+  <h2 class="center">Core</h2>
+  <div class="p">
+    <table>
+      <tr class="h">
+        <th>Directive</th>
+        <th>Local Value</th>
+        <th>Master Value</th>
+      </tr>
+      <tr>
+        <td class="e">memory_limit</td>
+        <td class="v">256M unless nobody is looking</td>
+        <td class="v">256M unless nobody is looking</td>
+      </tr>
+      <tr>
+        <td class="e">max_execution_time</td>
+        <td class="v">30 seconds or 1 sprint</td>
+        <td class="v">30 seconds or 1 sprint</td>
+      </tr>
+      <tr>
+        <td class="e">post_max_size</td>
+        <td class="v">8M compressed</td>
+        <td class="v">8M compressed</td>
+      </tr>
+      <tr>
+        <td class="e">upload_max_filesize</td>
+        <td class="v">2M</td>
+        <td class="v">2M</td>
+      </tr>
+      <tr>
+        <td class="e">display_errors</td>
+        <td class="v">On in dev</td>
+        <td class="v">Off in prod</td>
+      </tr>
+      <tr>
+        <td class="e">log_errors</td>
+        <td class="v">On</td>
+        <td class="v">On</td>
+      </tr>
+      <tr>
+        <td class="e">error_reporting</td>
+        <td class="v">E_ALL &amp; ~E_ACCOUNTABILITY</td>
+        <td class="v">E_ALL &amp; ~E_ACCOUNTABILITY</td>
+      </tr>
+      <tr>
+        <td class="e">short_open_tag</td>
+        <td class="v">Off</td>
+        <td class="v">Off</td>
+      </tr>
+      <tr>
+        <td class="e">default_charset</td>
+        <td class="v">UTF-8</td>
+        <td class="v">UTF-8</td>
+      </tr>
+      <tr>
+        <td class="e">allow_url_fopen</td>
+        <td class="v">On</td>
+        <td class="v">On</td>
+      </tr>
+      <tr>
+        <td class="e">session.gc_probability</td>
+        <td class="v">1</td>
+        <td class="v">1</td>
+      </tr>
+      <tr>
+        <td class="e">session.save_handler</td>
+        <td class="v">files</td>
+        <td class="v">files</td>
+      </tr>
+    </table>
+  </div>
 
-  <table>
-    <tr><th colspan="2">Registered PHP Streams</th></tr>
-    <tr>
-      <td class="key">Streams</td>
-      <td class="val">https, ftps, file, phar, coffee, regret, stackoverflow, localhost-but-it-works-on-my-machine</td>
-    </tr>
-    <tr>
-      <td class="key">Stream Filters</td>
-      <td class="val">string.rot13, markdown.strip, excuse.inflate, optimism.deflate</td>
-    </tr>
-  </table>
+  <h2 class="center">Modules</h2>
+  <div class="p">
+    <table>
+      <tr class="h">
+        <th colspan="2">Additional Modules</th>
+      </tr>
+      <tr>
+        <td class="e">Loaded Modules</td>
+        <td class="v">curl, json, mbstring, openssl, pdo_mysql, xml, gd, zip, sarcasm, denial, legacy_compat, miracle_worker</td>
+      </tr>
+      <tr>
+        <td class="e">Experimental Modules</td>
+        <td class="v">time_travel, ai_prompting, spontaneous_refactor, quantum_sessions</td>
+      </tr>
+      <tr>
+        <td class="e">Missing Modules</td>
+        <td class="v">the one your project actually needs</td>
+      </tr>
+    </table>
+  </div>
 
-  <table>
-    <tr><th colspan="2">Core Directives</th></tr>
-    <tr><td class="key">memory_limit</td><td class="val">256M unless nobody is looking</td></tr>
-    <tr><td class="key">max_execution_time</td><td class="val">30 seconds or 1 sprint, whichever comes first</td></tr>
-    <tr><td class="key">post_max_size</td><td class="val">8M compressed, 80M in meetings</td></tr>
-    <tr><td class="key">upload_max_filesize</td><td class="val">2M, except ZIPs labelled final_v2_REAL.zip</td></tr>
-    <tr><td class="key">display_errors</td><td class="val">On in dev, Off in prod, Loud in staging</td></tr>
-    <tr><td class="key">log_errors</td><td class="val">On, to /var/log/php/feelings.log</td></tr>
-    <tr><td class="key">error_reporting</td><td class="val">E_ALL &amp; ~E_ACCOUNTABILITY</td></tr>
-    <tr><td class="key">short_open_tag</td><td class="val">deprecated, then restored by committee</td></tr>
-    <tr><td class="key">default_charset</td><td class="val">UTF-8 unless copied from legacy CMS</td></tr>
-    <tr><td class="key">allow_url_fopen</td><td class="val">enabled with insufficient supervision</td></tr>
-  </table>
+  <h2 class="center">Environment</h2>
+  <div class="p">
+    <table>
+      <tr class="h">
+        <th>Variable</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td class="e">DOCUMENT_ROOT</td>
+        <td class="v mono">/var/www/html/believe</td>
+      </tr>
+      <tr>
+        <td class="e">SERVER_SOFTWARE</td>
+        <td class="v">Apache/2.4.99 (Compiled from rumors)</td>
+      </tr>
+      <tr>
+        <td class="e">SERVER_ADMIN</td>
+        <td class="v">root@localhost.nope</td>
+      </tr>
+      <tr>
+        <td class="e">REQUEST_METHOD</td>
+        <td class="v">GET, but judgmental</td>
+      </tr>
+      <tr>
+        <td class="e">REMOTE_ADDR</td>
+        <td class="v" id="remoteAddr">127.0.0.1-ish</td>
+      </tr>
+      <tr>
+        <td class="e">HTTP_USER_AGENT</td>
+        <td class="v mono" id="ua">Unknown browser from the future</td>
+      </tr>
+      <tr>
+        <td class="e">REQUEST_TIME</td>
+        <td class="v mono" id="reqTime">calculating...</td>
+      </tr>
+    </table>
+  </div>
 
-  <table>
-    <tr><th colspan="2">Loaded Modules</th></tr>
-    <tr><td class="key">Modules</td><td class="val">curl, json, mbstring, openssl, pdo_mysql, xml, gd, zip, sarcasm, denial, legacy_compat, miracle_worker</td></tr>
-    <tr><td class="key">Experimental Modules</td><td class="val">time_travel, ai_prompting, spontaneous_refactor, quantum_sessions</td></tr>
-    <tr><td class="key">Missing Modules</td><td class="val">the one your project actually needs</td></tr>
-  </table>
+  <h2 class="center">Credits</h2>
+  <div class="p">
+    <table>
+      <tr class="h">
+        <th>Module</th>
+        <th>Status</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td class="e">mod_rewrite_emotions</td>
+        <td class="v">enabled</td>
+        <td class="v">Rewrites all 500 errors into confidence</td>
+      </tr>
+      <tr>
+        <td class="e">ext_legacy</td>
+        <td class="v">always on</td>
+        <td class="v">Keeps 2009 code running against all odds</td>
+      </tr>
+      <tr>
+        <td class="e">ext_optimism</td>
+        <td class="v">beta</td>
+        <td class="v">Assumes deployment will succeed first try</td>
+      </tr>
+      <tr>
+        <td class="e">ext_random_bug</td>
+        <td class="v">intermittent</td>
+        <td class="v">Cannot reproduce in development environment</td>
+      </tr>
+    </table>
+  </div>
 
-  <table>
-    <tr><th colspan="2">Environment</th></tr>
-    <tr><td class="key">DOCUMENT_ROOT</td><td class="val mono">/var/www/html/believe</td></tr>
-    <tr><td class="key">SERVER_SOFTWARE</td><td class="val">Apache/2.4.99 (Compiled from rumors)</td></tr>
-    <tr><td class="key">SERVER_ADMIN</td><td class="val">root@localhost.nope</td></tr>
-    <tr><td class="key">REQUEST_METHOD</td><td class="val">GET, but judgmental</td></tr>
-    <tr><td class="key">REMOTE_ADDR</td><td class="val" id="remoteAddr">127.0.0.1-ish</td></tr>
-    <tr><td class="key">HTTP_USER_AGENT</td><td class="val" id="ua">Unknown browser from the future</td></tr>
-    <tr><td class="key">REQUEST_TIME</td><td class="val" id="reqTime">calculating...</td></tr>
-  </table>
+  <hr>
 
-  <table>
-    <tr><th colspan="3">Module Authors</th></tr>
-    <tr>
-      <td class="key">mod_rewrite_emotions</td>
-      <td class="val">enabled</td>
-      <td class="val">Rewrites all 500 errors into confidence</td>
-    </tr>
-    <tr>
-      <td class="key">ext_legacy</td>
-      <td class="val">always on</td>
-      <td class="val">Keeps 2009 code running against all odds</td>
-    </tr>
-    <tr>
-      <td class="key">ext_optimism</td>
-      <td class="val">beta</td>
-      <td class="val">Assumes deployment will succeed first try</td>
-    </tr>
-    <tr>
-      <td class="key">ext_random_bug</td>
-      <td class="val">intermittent</td>
-      <td class="val">Cannot reproduce in development environment</td>
-    </tr>
-  </table>
-
-  <div class="footer">
-    <strong>PHP 6.3.0</strong> is not and has never been a real release.<br>
-    This page was generated by static HTML with enterprise-grade imagination.
+  <div class="center">
+    <small>PHP 6.3.0 is fictional. This page is static HTML styled to look more like the classic phpinfo().</small>
   </div>
 
   <script>
