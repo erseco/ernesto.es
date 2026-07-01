@@ -503,12 +503,12 @@ params:
       - title: "Inteligencia artificial: programar, documentar y no acabar en un berenjenal"
         url: https://erseco.github.io/talks/charlas/2026-07-06-selia-ia-programar-documentar/unit/
         date: julio 2026
-        event: seLIA — I Jornada sobre Software Libre e IA Abierta
+        event: seLIA (URJC)
 
       - title: "Abajo el trabajo: shell, utilidades, IA y CI para hacer más y trabajar menos"
         url: https://erseco.github.io/talks/charlas/2026-07-03-3ipunt-dev-tools-ci-ai/unit/
         date: julio 2026
-        event: Taller para el equipo de desarrollo de 3ipunt
+        event: 3ipunt
 
       - title: Uso educativo de la IA
         url: https://erseco.github.io/talks/charlas/2023-05-encuentro-steam-uso-educativo-ia/unit/
