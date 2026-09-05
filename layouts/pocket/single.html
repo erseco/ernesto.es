@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }} · {{ site.Params.profile.name }}</title>
+  <meta name="description" content="{{ .Description }}">
+  <meta name="theme-color" content="#ccdae8">
+  <link rel="icon" href="{{ "favicon.ico" | relURL }}">
+  {{ with resources.Get "pocket.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+  {{ end }}
+  {{ with resources.Get "pocket.js" | minify | fingerprint }}
+  <script defer src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
+  {{ end }}
+</head>
+<body>
+  <header class="page-header">
+    <a class="wordmark" href="{{ site.Home.RelPermalink }}">ernesto.es</a>
+    <a class="back-link" href="{{ site.Home.RelPermalink }}">↖ Volver a la web</a>
+  </header>
+  <main class="stage">
+    <h1 class="visually-hidden">Pocket Portfolio de {{ site.Params.profile.name }}</h1>
+    <div class="intro">
+      <p class="intro-copy">Mi web, en versión retro.<br>Pulsa START y echa un vistazo.</p>
+      <div class="instructions" id="instructions">
+        <p><kbd>↑</kbd><kbd>↓</kbd> Explora el menú</p>
+        <p><kbd>A</kbd> / <kbd>Enter</kbd> Elige <span>·</span> <kbd>B</kbd> / <kbd>Esc</kbd> Vuelve</p>
+        <p class="touch-hint">O juega directamente con los botones.</p>
+      </div>
+    </div>
+    <section class="console" aria-label="Consola Pocket Portfolio" aria-describedby="instructions">
+      <div class="top-edge" aria-hidden="true"><span>◁ OFF · ON ▷</span><i></i></div>
+      <button class="power" type="button" aria-label="Encendido" aria-pressed="true" data-action="power"></button>
+      <div class="bezel">
+        <div class="bezel-caption" aria-hidden="true"><span></span> DOT MATRIX WITH PERSONALITY <span></span></div>
+        <div class="battery" aria-hidden="true"><i></i><span>BATTERY</span></div>
+        <div class="lcd">
+          <div class="screen" id="screen" tabindex="-1">
+            <div class="welcome">
+              <p class="screen-kicker">PERSONAL SOFTWARE</p>
+              <svg class="pixel-avatar" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><path fill="currentColor" d="M5 1h6v1h2v2h1v8h-2v2h-2v1H6v-1H4v-2H2V4h1V2h2z"/><path fill="var(--lcd)" d="M4 5h3v3H4zm5 0h3v3H9zM5 10h1v1h4v-1h1v2H5z"/><path fill="currentColor" d="M5 6h1v1H5zm5 0h1v1h-1z"/></svg>
+              <h2>ERNESTO<br>SERRANO</h2>
+              <p class="screen-tagline">{{ site.Params.profile.tagline }}</p>
+              <button type="button" class="start-prompt" data-action="start">▸ PULSA START</button>
+            </div>
+          </div>
+          <div class="screen-status" id="screen-status" aria-live="polite">© {{ now.Year }} · ERNESTO SERRANO</div>
+        </div>
+      </div>
+      <div class="brand"><span aria-hidden="true"><strong>ernesto</strong> <em>POCKET</em><sup>01</sup></span><a class="console-exit" href="{{ site.Home.RelPermalink }}" aria-label="Volver a la web">↖ WEB</a></div>
+      <div class="controls">
+        <div class="dpad" role="group" aria-label="Cruceta">
+          <button type="button" class="up" data-action="up" aria-label="Arriba">▲</button>
+          <button type="button" class="left" data-action="left" aria-label="Izquierda, volver">◀</button>
+          <span aria-hidden="true"></span>
+          <button type="button" class="right" data-action="right" aria-label="Derecha, elegir">▶</button>
+          <button type="button" class="down" data-action="down" aria-label="Abajo">▼</button>
+        </div>
+        <div class="action-buttons">
+          <div><button type="button" data-action="back" aria-label="B, volver">B</button><span aria-hidden="true">B</span></div>
+          <div><button type="button" data-action="accept" aria-label="A, elegir">A</button><span aria-hidden="true">A</span></div>
+        </div>
+      </div>
+      <div class="system-buttons">
+        <div><button type="button" data-action="sound" aria-label="Select, sonido" aria-pressed="false"></button><span aria-hidden="true">SELECT</span></div>
+        <div><button type="button" data-action="start" aria-label="Start, menú principal"></button><span aria-hidden="true">START</span></div>
+      </div>
+      <div class="speaker" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="bottom-mark" aria-hidden="true">PHONES <span>▯</span></div>
+    </section>
+    <p class="console-note">SELECT: sonido · START: menú</p>
+    <noscript><p>La consola necesita JavaScript. <a href="{{ site.Home.RelPermalink }}">Lee el portfolio completo en la web.</a></p></noscript>
+  </main>
+  <footer class="page-footer"><span>{{ site.Params.profile.name }} © {{ now.Year }}</span><span>POCKET PORTFOLIO</span></footer>
+
+  <template data-section="Sobre mí">
+    <article><h2>{{ site.Params.profile.name }}</h2><p>{{ site.Params.profile.tagline }}</p>{{ site.Params.summary.summary | markdownify }}</article>
+  </template>
+  <template data-section="Experiencia">
+    {{ range site.Params.jobs.list }}
+    <article><h2>{{ .position }}</h2><p>{{ .company }} · {{ .location }}</p><p>{{ .dates }}</p>{{ .details | markdownify }}{{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">Visitar empresa ↗</a>{{ end }}</article>
+    {{ end }}
+  </template>
+  <template data-section="Educación">
+    {{ range site.Params.education.list }}
+    <article><h2>{{ .degree }}</h2><p>{{ .college }}</p><p>{{ .dates }}</p>{{ with .list }}<ul>{{ range . }}<li>{{ .grade }}: {{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .subject }}</a>{{ else }}{{ .subject }}{{ end }}</li>{{ end }}</ul>{{ end }}{{ with .url }}<p><a href="{{ . }}" target="_blank" rel="noopener noreferrer">Ver estudios ↗</a></p>{{ end }}{{ with .thesis }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">Leer trabajo final ↗</a>{{ end }}</article>
+    {{ end }}
+  </template>
+  {{ range slice "articles" "speech" "press" "prizes" }}
+    {{ $section := index site.Params . }}
+    <template data-section="{{ $section.title }}">
+      {{ range $section.list }}
+      <article><h2>{{ .title }}</h2>{{ with .authors }}<p>{{ . }}</p>{{ end }}{{ with .conference }}<p>{{ . }}</p>{{ end }}{{ with .publisher }}<p>{{ . }}</p>{{ end }}{{ with .event }}<p>{{ . }}</p>{{ end }}{{ with .date }}<p>{{ . }}</p>{{ end }}{{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">Abrir enlace ↗</a>{{ end }}</article>
+      {{ end }}
+    </template>
+  {{ end }}
+  <template data-section="Idiomas"><article><h2>Idiomas</h2><ul>{{ range site.Params.languages.list }}<li>{{ .language }} · {{ .level }}</li>{{ end }}</ul></article></template>
+  <template data-section="Intereses"><article><h2>Fuera del teclado</h2><ul>{{ range site.Params.interests.list }}<li>{{ .interest }}</li>{{ end }}</ul></article></template>
+  <template data-section="Lugares">
+    {{ range hugo.Data.places }}
+    <article><h2>{{ index . 0 }}</h2><p>Un lugar en mi recorrido.</p><a href="https://www.google.com/maps/search/?api=1&query={{ index . 1 }},{{ index . 2 }}" target="_blank" rel="noopener noreferrer">Ver en el mapa ↗</a></article>
+    {{ end }}
+  </template>
+  <template data-section="Contacto y enlaces">
+    {{ range site.Params.contact.list }}
+    <article data-nosnippet="true"><h2>{{ .title }}</h2><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }} ↗</a></article>
+    {{ end }}
+    <article><h2>WhatsApp</h2><a href="https://api.whatsapp.com/send?phone=34654594460&text=Hola, Ernesto!" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp ↗</a></article>
+    {{ range site.Params.old.list }}
+    <article><h2>Web anterior</h2><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }} ↗</a></article>
+    {{ end }}
+  </template>
+</body>
+</html>

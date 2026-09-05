@@ -581,6 +581,18 @@ p {
 
 
 //*************************** Responsive ****************************/
+.pocket-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 10px 14px;
+    border: 1px solid rgba(255, 255, 255, .65);
+    border-radius: 6px;
+    font-size: 14px;
+    &:hover, &:focus-visible { background: #204f5a; color: #fff; }
+}
+
 // Define responsive
 
 // Small devices (landscape phones, less than 768px)
