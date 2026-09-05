@@ -16,6 +16,8 @@
 
     <script defer src="{{ .Site.BaseURL }}js/color.js"></script>
     <script defer src="{{ .Site.BaseURL }}js/bender.js"></script>
+    {{ $places := resources.FromString "js/places.js" (printf "const portfolioPlaces = %s;" (hugo.Data.places | jsonify)) }}
+    <script defer src="{{ $places.RelPermalink }}"></script>
     <script defer src="{{ .Site.BaseURL }}js/map.js"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVLXM0pDL_Vd3o3oh_zGiUP5OAmYWlFxE&callback=initMap&libraries=&v=weekly&loading=async" async defer></script>
@@ -58,6 +60,7 @@
                     <a class="btn btn-translate" href="{{ .Permalink }}">{{upper .Lang }}</a>
                     {{ end }}
                 </div>
+                <a class="pocket-link" href="{{ "pocket/" | relURL }}"><span aria-hidden="true">✚</span> Modo bolsillo <span aria-hidden="true">↗</span></a>
             </div>
 
             <div class="contact-container container-block" data-nosnippet="true">
